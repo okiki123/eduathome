@@ -18,10 +18,10 @@ script:
 #  npm run clean;
 #  npm run build
 #  ; fi'
-#deploy:
-#  skip_cleanup: true
-#  provider: heroku
-#  api_key:
-#    secure: KEvh/mUGg+Q8w74Y8Xu5W4WQVRn7jcj+TadnwgZYGYdmNLk52gTm40k4ueYyzkxf8puVDKOJO2Lu1Y/quW+LMKbNmLFtZw0qAW7GWCnA8lvVxLlVgK884NikBeiFtuUY1Sdyj8y7SoatF1PJluqyTm2hKT1XZWtkF7kTo7+lRjd6v8ru/nqL8AaCpebUsV24e+gBWOXRZ7kclgWrzFwSRIgFJ23ZV5Q8uWrf9tVLt0TiSSoAGKolpkF7ufRCxju8H5j9msjh1JnVb4czeG6Ii5lWhDGovKK7W8/wd3VGjjDt3hW0YB3SkHR6x+UW5XY4q/I8AY5ggn7Cf4RSfSQOaxwLKw/JqNAfBWs52WDlY9Wue19S/xzB9tEJ6tfOZQ9lql4ziffk9IxmUb0Aybl4yUFvAA7ks37pqD3otetD97SvA/4Ndh0ZVAt/xLgYYVeR84/ihfmYCIvmtk0KJ78Vqp+VBhF/fz8yHkpHEG1FtaXUeV51JdWGW5baC6Kav2R53G5plpUVAzXsBb5v68cb+7X/V2fEIMrDL3ib8WndIFBmzNh8j4Nn3Sg74WYdRaUhZEmkHYP4QcwZ9l5UYSx9s+q9cJrl+mfad+15uUTS1TwuSBtCyddWJY9STLxF3QFrM5CidnUD3edQToHFreJVt5mv88+h9HN7cfYvDdnZm8U=
-#  on:
-#    branch: master
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: "o5nDuaebSkZZS3fPdYmZQ44s7piWusKsbd8XdPWggzFOzxfbj91aSZzWzyVG/1jZ8IRoUD2IU/B9ef90tWrSePhEqhF36A7OqtOPUFwJraYRbFj5dQlqOh5y7bF+7SzrkusmgIOJ93a9i9FPRgt97CgMcWtiOC+98JQW4JIWDH/XY5BGxpvjjTidnXxaLKoL6OJPim59XZ8qoGR2QqioLqOnNjZsP56fZqJB/cG86ZoozX7LTJsuhEAeqgYgFu6wii9AG9MsvOSWdtFWHM0mEuyZD1TH9J6mjsKoQezFNXKsF0Tgv6nyt63jjqzDnvrQd1If/C6AzgSjCBggJ8wiDgKWJ9bSU+FVZ6JgPHVLzFF6D4rkwstCxNHsNa4mrMtiqRygDJzzQAQGT+KHJG7g4C1whMmYfflYxdPj3UE6wmISQrbIm03KqKFD5yGh2Nofz0wQzk6VKRtjFZVPYVQ9lXJqaE666U/xQjRGn+n19W0zRCulQ/+NeVm74v1PUBySZxsS7BtLhYfbJhDws+Sn3O4h9/YXeOGut/+c7Rf8xbJNKk3PrHrHXQ1wO5DE2KBV7hoNoAEGjDs7qkSuGLsKXfdsbTiQkinYxbxV7rgDexBh3zIxySLpVMw85uTewsK+9VbsLXsyF0DyX7//ko4SIpL0NIhme4CSR3N8z1th2Ds=
+  on:
+    branch: master
