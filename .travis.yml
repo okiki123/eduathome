@@ -2,7 +2,6 @@ language: php
 php:
   - '7.2'
 dist: trusty
-sudo: required
 #notifications:
 #  slack: prepperlearning:VgHyCXQ8lq11Qonx7OFYEGoA
 branches:
