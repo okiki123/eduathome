@@ -11,7 +11,8 @@ branches:
 #  - npm install
 script:
   - echo 'hello'
-#  - npm run set-env
+  - npm run set-env
+  - composer install
 #  - npm run test
 #  - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
 #  npm run clean;
