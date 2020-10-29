@@ -61,7 +61,7 @@ jobs:
       # Specify the version you desire here
       - image: circleci/php:7.2-node-browsers
     steps:
-      - ls
+      - run: ls
 
 workflows:
   version: 2
