@@ -57,6 +57,9 @@ jobs:
 #      - run: ./vendor/bin/codecept build
 #      - run: ./vendor/bin/codecept run
   deploy:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.2-node-browsers
     steps:
       - ls
 
