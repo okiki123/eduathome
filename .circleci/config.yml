@@ -14,7 +14,7 @@ workflows:
 #          requires:
 #            - build
           post-steps:
-            - run: php artisan migrate
+            - run: heroku run "php artisan migrate"
 #          filters:
 #            branches:
 #              only: master
