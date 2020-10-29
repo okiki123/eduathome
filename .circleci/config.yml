@@ -14,8 +14,7 @@ workflows:
 #          requires:
 #            - build
           post-steps:
-            - run: npm run set-env
-            - run: npm install
+            - run: heroku npm run set-env
 #          filters:
 #            branches:
 #              only: master
