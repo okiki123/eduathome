@@ -2,9 +2,21 @@
 #
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
-version: 2
+version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10.
+
+workflows:
+  build-and-deploy:
+    jobs:
+      #      - build
+      - heroku/deploy-via-git # Use the pre-configured job, deploy-via-git
+#          requires:
+#            - build
+#          filters:
+#            branches:
+#              only: master
+
 jobs:
   build:
     docker:
@@ -59,14 +71,3 @@ jobs:
 #      - run: ./vendor/bin/codecept build
 #      - run: ./vendor/bin/codecept run
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-#      - build
-      - heroku/deploy-via-git # Use the pre-configured job, deploy-via-git
-#          requires:
-#            - build
-#          filters:
-#            branches:
-#              only: master
