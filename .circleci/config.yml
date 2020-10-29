@@ -14,7 +14,7 @@ workflows:
 #          requires:
 #            - build
           post-steps:
-            - run: heroku npm run set-env
+            - run: php artisan migrate
 #          filters:
 #            branches:
 #              only: master
