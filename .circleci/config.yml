@@ -7,7 +7,6 @@ workflows:
   build-and-deploy:
     jobs:
       - build:
-          context: slack-secrets
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build
