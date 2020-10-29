@@ -60,7 +60,6 @@ jobs:
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
       - run: npm run set-env
-      - run: npm install
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
