@@ -1,11 +1,13 @@
 version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
+  slack: circleci/slack@4.1.1
 
 workflows:
   build-and-deploy:
     jobs:
-      - build
+      - build:
+          context: slack-secrets
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build
@@ -55,6 +57,12 @@ jobs:
 
 #       prepare the database
       - run: php artisan migrate
+      - slack/notify:
+            event: pass
+            template: success_tagged_deploy_1
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
       # run tests with phpunit or codecept
       #- run: ./vendor/bin/phpunit
