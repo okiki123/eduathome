@@ -63,3 +63,10 @@ jobs:
     steps:
       - ls
 
+workflows:
+  build_deploy:
+    jobs:
+      - build
+      - deploy: # Use the pre-configured job, deploy-via-git
+          requires:
+            - build
