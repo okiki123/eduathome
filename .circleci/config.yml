@@ -9,7 +9,7 @@ orbs:
 workflows:
   build-and-deploy:
     jobs:
-      #      - build
+      - build
       - heroku/deploy-via-git # Use the pre-configured job, deploy-via-git
 #          requires:
 #            - build
@@ -56,7 +56,8 @@ jobs:
           keys:
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
-      - run: npm install
+      - run: npm run set-env
+      - run: npm instal
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
