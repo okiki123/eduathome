@@ -11,8 +11,8 @@ workflows:
     jobs:
       - build
       - heroku/deploy-via-git # Use the pre-configured job, deploy-via-git
-#          requires:
-#            - build
+          requires:
+            - build
 #          filters:
 #            branches:
 #              only: master
@@ -57,7 +57,7 @@ jobs:
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
       - run: npm run set-env
-      - run: npm instal
+      - run: npm install
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
