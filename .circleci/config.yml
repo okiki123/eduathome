@@ -9,12 +9,10 @@ orbs:
 workflows:
   build-and-deploy:
     jobs:
-#      - build
+      - build
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
-#          requires:
-#            - build
-          post-steps:
-            - run: heroku run "php artisan migrate" -a $HEROKU_APP_NAME
+          requires:
+            - build
 #          filters:
 #            branches:
 #              only: master
@@ -39,6 +37,7 @@ jobs:
 
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
       - run: sudo docker-php-ext-install zip
+      - run: npm run set-env
 
       # Download and cache dependencies
       - restore_cache:
@@ -58,15 +57,14 @@ jobs:
           keys:
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
-      - run: npm run set-env
+      - run: npm install
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
 
-      # prepare the database
-#      - run: touch storage/testing.sqlite
-#      - run: php artisan migrate --env=testing --database=sqlite_testing --force
+       prepare the database
+      - run: php artisan migrate
 
       # run tests with phpunit or codecept
       #- run: ./vendor/bin/phpunit
