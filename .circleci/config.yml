@@ -63,10 +63,10 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
-          requires:
-            - build
+#      - build
+      - heroku/deploy-via-git # Use the pre-configured job, deploy-via-git
+#          requires:
+#            - build
 #          filters:
 #            branches:
 #              only: master
