@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     </head>
     <body class="landing-page">
@@ -57,7 +57,7 @@
                             </select>
                         </div>
                         <div class="form-group mb-2 mb-md-0 mx-2 font-size-lg">
-                            <input type="text" placeholder="location" class="form-control font-size-lg" autocomplete="off">
+                            <input type="text" placeholder="location"  class="form-control font-size-lg" autocomplete="off">
                         </div>
                         <div class="mx-2">
                             <button type="button" class="btn btn-primary btn-standard btn-block h-100 font-size-lg font-w600">Search</button>
@@ -68,6 +68,6 @@
         </div>
     </section>
 
-        <script src="/js/app.js" type="text/javascript"></script>
+        <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     </body>
 </html>
