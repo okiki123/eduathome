@@ -1,0 +1,14 @@
+.main-nav {
+    a.nav-link, .navbar-brand {
+        color: $tertiary-brown $im;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        font-weight: bold;
+
+        @include media-breakpoint-up(lg) {
+            padding: 1.3em 1em $im;
+        }
+    }
+}

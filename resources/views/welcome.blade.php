@@ -8,93 +8,66 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <body class="landing-page">
+    <section class="banner-section d-flex flex-column">
+        <nav class="navbar navbar-expand-lg navbar-light main-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="{{ asset('images/logo.jpg') }}" width="40" height="40" class="d-inline-block align-top" alt="">
+                    <span class="font-size-xl font-w600">Edu@Home</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Find Caregiver</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <a class="btn btn-light btn-standard font-w600">Login</a>
+                        <a class="btn btn-primary btn-standard font-w600">Join</a>
+                    </div>
                 </div>
-            @endif
+            </div>
+        </nav>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    {{ config('app.name') }}
+        <div class="banner flex-grow-1 d-flex justify-content-center align-items-center">
+            <div class="text-white search-area">
+                <div class="text text-center">
+                    <h2>Welcome to Edu@Home</h2>
+                    <p class="search-text">Search and find Caregivers near you</p>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="form-search text-center d-flex justify-content-center">
+                    <form class="form d-md-flex">
+                        <div class="form-group mb-2 mb-md-0 mx-2">
+                            <select class="form-control font-size-lg" id="selcategory">
+                                <option value="">select category</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-2 mb-md-0 mx-2 font-size-lg">
+                            <input type="text" placeholder="location" class="form-control font-size-lg" autocomplete="off">
+                        </div>
+                        <div class="mx-2">
+                            <button type="button" class="btn btn-primary btn-standard btn-block h-100 font-size-lg font-w600">Search</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </section>
+
+        <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     </body>
 </html>

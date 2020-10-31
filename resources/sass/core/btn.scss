@@ -1,0 +1,19 @@
+.btn {
+    &-primary {
+        background-color: $primary-green;
+        border-color: $primary-green;
+        color: $white;
+
+        &:hover, &:focus, &:active {
+            background-color: $primary-green !important;
+            border-color: $primary-green !important;
+            opacity: 0.9;
+            outline: none;
+            box-shadow: none !important;
+        }
+    }
+
+    &-standard {
+        min-width: 7.7em;
+    }
+}

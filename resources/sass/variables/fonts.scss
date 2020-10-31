@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mallanna&display=swap');
+
+$primary-font: 'Mallanna', sans-serif;;
+
+$im: !important;
+
+body {
+  font-family: $primary-font $im;
+}

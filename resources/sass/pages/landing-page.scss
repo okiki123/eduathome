@@ -1,0 +1,48 @@
+.landing-page {
+    .banner-section {
+        min-height: 100vh;
+
+        .banner {
+            background: linear-gradient(
+                    120deg,
+                    rgba(27, 89, 84, 0.5),
+                    rgba(27, 89, 84, 0.5)
+            ), url("/images/banner.jpg") no-repeat center;
+            background-size: cover;
+
+            .search-area {
+                h2 {
+                    font-size: 3.5em;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 2em;
+                    }
+                }
+
+                .search-text {
+                    font-size: 1.5rem;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .form-control {
+                    width: 300px;
+                    height: 50px;
+
+                    @include media-breakpoint-between(md, lg) {
+                        width: 270px;
+                    }
+                }
+
+                button {
+                    min-width: 150px;
+                    @include media-breakpoint-between(md, lg) {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+    }
+}
