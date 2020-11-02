@@ -3,12 +3,19 @@
         color: $tertiary-brown $im;
     }
 
-    .nav-link {
-        font-size: 1rem;
-        font-weight: bold;
+    .nav-item {
+        .nav-link {
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.2s;
 
-        @include media-breakpoint-up(lg) {
-            padding: 1.3em 1em $im;
+            @include media-breakpoint-up(lg) {
+                padding: 1.3em 1em $im;
+            }
+
+            &:hover {
+                color: $secondary-lemon $im;
+            }
         }
     }
 }
