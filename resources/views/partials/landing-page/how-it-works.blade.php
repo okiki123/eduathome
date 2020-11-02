@@ -1,5 +1,5 @@
 <section class="how-it-works">
-    <div class="container section-contents">
+    <div class="container section-contents mt-4">
         <div class="section-header">
             <h2 class="text-center">How it works</h2>
             <p class="text-center font-size-lg text-muted">
@@ -10,7 +10,7 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card mb-4">
                         <img class="card-img-top mx-auto how-it-works__img" src="{{ asset('images/how-it-works__search.svg') }}" alt="Search">
                         <div class="card-body text-center">
                             <h3 class="font-w600">Find a Caregiver</h3>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card  mb-4">
                         <img class="card-img-top mx-auto how-it-works__img" src="{{ asset('images/how-it-works__connect.svg') }}" alt="Search">
                         <div class="card-body text-center">
                             <h3 class="font-w600">Connect</h3>
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card  mb-4">
                         <img class="card-img-top mx-auto how-it-works__img" src="{{ asset('images/how-it-works__relax.svg') }}" alt="Search">
                         <div class="card-body text-center">
                             <h3 class="font-w600">Work Freely</h3>

@@ -1,9 +1,9 @@
 .text {
     &-primary {
-        color: $primary-green;
+        color: $primary-green $im;
     }
 
     &-secondary {
-        color: $secondary-lemon;
+        color: $secondary-lemon $im;
     }
 }

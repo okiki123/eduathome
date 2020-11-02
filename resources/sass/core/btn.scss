@@ -13,6 +13,20 @@
         }
     }
 
+    &-secondary {
+        background-color: $secondary-lemon;
+        border-color: $secondary-lemon;
+        color: $white;
+
+        &:hover, &:focus, &:active {
+            background-color: $secondary-lemon !important;
+            border-color: $secondary-lemon !important;
+            opacity: 0.9;
+            outline: none;
+            box-shadow: none !important;
+        }
+    }
+
     &-standard {
         min-width: 7.7em;
     }

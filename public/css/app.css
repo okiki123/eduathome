@@ -11055,11 +11055,19 @@ body {
 }
 
 .text-primary {
-  color: #1b5954;
+  color: #1b5954 !important;
 }
 
 .text-secondary {
-  color: #aba104;
+  color: #aba104 !important;
+}
+
+.bg-primary {
+  background-color: #1b5954 !important;
+}
+
+.bg-secondary {
+  background-color: #aba104 !important;
 }
 
 .font-w100 {
@@ -11149,6 +11157,22 @@ body {
 .btn-primary:active {
   background-color: #1b5954 !important;
   border-color: #1b5954 !important;
+  opacity: 0.9;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.btn-secondary {
+  background-color: #aba104;
+  border-color: #aba104;
+  color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: #aba104 !important;
+  border-color: #aba104 !important;
   opacity: 0.9;
   outline: none;
   box-shadow: none !important;
@@ -11259,5 +11283,45 @@ body {
 
 .landing-page .how-it-works__img {
   width: 230px;
+}
+
+.landing-page .caregiver-signup {
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .landing-page .caregiver-signup {
+    padding: 3rem 1rem;
+  }
+}
+
+.landing-page .caregiver-signup h2 {
+  font-size: 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .landing-page .caregiver-signup h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.landing-page .caregiver-signup h3 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .landing-page .caregiver-signup h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.landing-page .caregiver-signup h4 {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 767.98px) {
+  .landing-page .caregiver-signup h4 {
+    font-size: 1rem;
+  }
 }
 
