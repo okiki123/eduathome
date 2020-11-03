@@ -1,5 +1,26 @@
 .landing-page {
 
+    .section {
+        min-height: $section-height;
+
+        &-contents {
+            padding: 4rem 2rem;
+
+            @include media-breakpoint-down(sm) {
+                padding: 4rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+
+                >h2 {
+                    font-size: 2rem;
+                    color: $tertiary-brown;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
     .banner-section {
         min-height: 100vh;
 
@@ -48,26 +69,6 @@
     }
 
     .how-it-works {
-        min-height: $section-height;
-
-        .section-contents {
-            padding: 4rem 2rem;
-
-            @include media-breakpoint-down(sm) {
-                padding: 4rem 1rem;
-            }
-
-            .section-header {
-                margin-bottom: 3rem;
-
-                >h2 {
-                    font-size: 2rem;
-                    color: $secondary-lemon;
-                    font-weight: 600;
-                }
-            }
-        }
-
         &__img {
             width: 230px;
         }
@@ -105,5 +106,19 @@
         }
 
 
+    }
+
+    .success-stories {
+        .card {
+            box-shadow: 0 1px 10px 0 rgba(0,0,0,0.1), 0 6px 15px 0 rgba(0,0,0,0.1);
+
+            &-header {
+                padding: 4rem;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                min-height: 14.5rem
+            }
+        }
     }
 }

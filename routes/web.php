@@ -14,7 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $customers = [
+        asset('images/success_stories__person3.jpg'),
+        asset('images/success_stories__person4.jpg'),
+        asset('images/success_stories__person16.jpg')
+    ];
+
+    $caregivers = [
+        asset('images/success_stories__person4.jpg'),
+        asset('images/success_stories__person5.jpg'),
+        asset('images/success_stories__person3.jpg')
+    ];
+
+    return view('welcome', [
+        'customers' => $customers,
+        'caregivers' => $caregivers
+    ]);
 });
 
 Auth::routes();

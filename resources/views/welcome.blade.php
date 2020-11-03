@@ -19,6 +19,10 @@
 
         @include('partials.landing-page.caregiver-action')
 
+        @include('partials.landing-page.why-us')
+
+        @include('partials.landing-page.success-stories')
+
         <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     </body>
 </html>

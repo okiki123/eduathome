@@ -6,7 +6,7 @@
     </div>
     <div class="button text-center mt-4">
         <a class="btn btn-secondary font-w600 font-size-lg btn-standard">
-            Sign up
+            Join
         </a>
     </div>
 </section>
