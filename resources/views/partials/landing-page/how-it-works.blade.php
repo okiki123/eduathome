@@ -15,8 +15,10 @@
                         <div class="card-body text-center">
                             <h4 class="font-w600">Find a Caregiver</h4>
                             <p class="card-text font-size-md text-muted text-justify">
-                                Fusce a ligula sit amet tellus rhoncus tincidunt. Ut in eleifend eros. Integer eu
-                                finibus leo, sit amet auctor purus. Etiam eget lectus sed erat ullamcorper finibus.
+                                We hire the most qualified contractors, certified through our system of excellent
+                                background checks and thorough accreditations investigations. This is to ensure parents
+                                and guardians that the measures we take to make certain that they will feel confident
+                                concerning the safety of whois hired to monitor their child’s school day while at home.
                             </p>
                         </div>
                     </div>
@@ -28,8 +30,11 @@
                         <div class="card-body text-center">
                             <h4 class="font-w600">Connect</h4>
                             <p class="card-text font-size-md text-muted text-justify">
-                                Fusce a ligula sit amet tellus rhoncus tincidunt. Ut in eleifend eros. Integer eu
-                                finibus leo, sit amet auctor purus. Etiam eget lectus sed erat ullamcorper finibus.
+                                We have heard the cry of parents and have found the solution to assist them with daily
+                                help to ensure that their student learning does not stop because they are not in a school
+                                building. We connect you with the convenience of our company’s high functionality
+                                websites and apps. With 20 years of experience in child-care and fulfilling the needs of
+                                parents, students and teachers we make it possible and with ease.
                             </p>
                         </div>
                     </div>
@@ -41,8 +46,10 @@
                         <div class="card-body text-center">
                             <h4 class="font-w600">Work Freely</h4>
                             <p class="card-text font-size-md text-muted text-justify">
-                                Fusce a ligula sit amet tellus rhoncus tincidunt. Ut in eleifend eros. Integer eu
-                                finibus leo, sit amet auctor purus. Etiam eget lectus sed erat ullamcorper finibus.
+                                You will be to go to your home’s workspace, with a freedom to trust that your student is
+                                in good hands. Not only will your student be monitored and tutored, during virtual school,
+                                but they will also be fed during their lunch hour. Your child’s schedule will remain
+                                fulfilled and this will reflect your students grade improvement.
                             </p>
                         </div>
                     </div>

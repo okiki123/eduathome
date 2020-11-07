@@ -12,9 +12,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Find Caregiver</a>
                     </li>
                     <li class="nav-item">
