@@ -11,6 +11,19 @@
             outline: none;
             box-shadow: none !important;
         }
+
+        &:disabled {
+            border-color: $grey-border;
+            background-color: $grey-border;
+            color: $primary-green;
+            cursor: not-allowed;
+
+            &:hover {
+                border-color: $grey-border $im;
+                background-color: $grey-border $im;
+                color: $primary-green;
+            }
+        }
     }
 
     &-secondary {

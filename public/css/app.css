@@ -11166,6 +11166,19 @@ body {
   box-shadow: none !important;
 }
 
+.btn-primary:disabled {
+  border-color: #dbe2e8;
+  background-color: #dbe2e8;
+  color: #1b5954;
+  cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover {
+  border-color: #dbe2e8 !important;
+  background-color: #dbe2e8 !important;
+  color: #1b5954;
+}
+
 .btn-secondary {
   background-color: #aba104;
   border-color: #aba104;
@@ -11428,5 +11441,34 @@ body {
   background-size: cover;
   background-position: center center;
   min-height: 14.5rem;
+}
+
+.auth-pages {
+  min-height: 100vh;
+}
+
+.auth-pages .register .auth-card {
+  width: 400px;
+}
+
+@media (max-width: 767.98px) {
+  .auth-pages .register .auth-card {
+    width: 100%;
+  }
+}
+
+.auth-pages .register .auth-card label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.auth-pages .register .auth-card .back {
+  color: #1b5954;
+  opacity: 0.8;
+}
+
+.auth-pages .register .auth-card .back:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 

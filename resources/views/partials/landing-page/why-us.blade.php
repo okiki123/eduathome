@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <a class="btn btn-primary btn-standard btn-lg">Get Started</a>
+                        <a class="btn btn-primary btn-standard btn-lg" href="{{ route('register') }}">Get Started</a>
                     </div>
                 </div>
             </div>

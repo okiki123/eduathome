@@ -5,7 +5,7 @@
         <h4>sign up today to get new requests.</h4>
     </div>
     <div class="button text-center mt-4">
-        <a class="btn btn-secondary font-w600 font-size-lg btn-standard">
+        <a class="btn btn-secondary font-w600 font-size-lg btn-standard" href="{{route('register')}}">
             Join
         </a>
     </div>
