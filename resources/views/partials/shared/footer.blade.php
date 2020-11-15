@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 $route = Route::currentRouteName();
-    $authRoutes = config('custom.auth_routes');
+$authRoutes = config('custom.auth_routes');
 ?>
 
 @if(in_array($route, $authRoutes))

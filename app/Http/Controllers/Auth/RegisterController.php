@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Constants\Messages;
 use App\Http\Controllers\Controller;
+use App\Mail\Registration;
+use App\Models\Caregiver;
+use App\Models\VerificationToken;
+use App\Process\RegistrationProcess;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Models\User;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -41,6 +51,32 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function register(Request $request)
+    {
+        $cleanData = $this->validator($request->all())->validate();
+
+        $registrationProcess = new RegistrationProcess($request, $cleanData);
+
+        try {
+
+            DB::beginTransaction();
+
+            $userId = $registrationProcess->run();
+
+            DB::commit();
+
+            $request->session()->put('userId', $userId);
+
+            return redirect()->route('verification.notice');
+
+        } catch (Exception $ex) {
+
+            DB::rollBack();
+
+            return back()->with('message', Messages::REGISTRATION_FAILED);
+        }
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,9 +86,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropTestsTable extends Migration
+class CreateCaregiversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class DropTestsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('tests');
+        Schema::create('caregivers', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('telephone')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,9 +28,6 @@ class DropTestsTable extends Migration
      */
     public function down()
     {
-        Schema::create('tests', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        Schema::dropIfExists('caregivers');
     }
 }

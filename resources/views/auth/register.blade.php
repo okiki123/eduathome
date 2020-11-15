@@ -4,10 +4,13 @@ use App\Constants\PageTitle;
 use App\Constants\StaticContents;
 
 $title = PageTitle::REGISTER;
-    $data = [
+$data = [
         'caregiver' => StaticContents::CAREGIVER,
-        'parent' => StaticContents::PARENT
-    ]
+        'parent' => StaticContents::PARENT,
+        'route' => route('register'),
+        'loginRoute' => route('login'),
+        'data' => old()
+]
 ?>
 
 @extends('layouts.auth')

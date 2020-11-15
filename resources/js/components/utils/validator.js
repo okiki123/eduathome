@@ -24,7 +24,7 @@ export const validate = (value, validation = {}, fieldName = '') => {
     }
 
     if (rules.confirm.check) {
-        return value === rules.confirm.referenceValue ? null : `${fieldName} do not match`;
+        return value === rules.confirm.referenceValue ? null : `password do not match`;
     }
 
     if (rules.min) {

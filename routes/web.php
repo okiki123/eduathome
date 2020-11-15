@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,12 +28,17 @@ Route::get('/', function () {
         asset('images/success_stories__person3.jpg')
     ];
 
+    Mail::raw('Hello', function ($message) {
+        $message->to('abc@abc.com')
+            ->subject('Laravel Mail');
+    });
+
     return view('welcome', [
         'customers' => $customers,
         'caregivers' => $caregivers
     ]);
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta id="csrf-token" name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }} - {{ $title }}</title>
 
@@ -19,10 +19,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
 <div id="app" class="d-flex justify-content-between flex-column auth-pages">
     @include('partials.shared.navbar')
 
-    <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+    @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ $errors->all()[0] }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-4">
         @yield('content');
     </main>
 

@@ -1,23 +1,32 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @property integer $id
+ * @property string $firstname
+ * @property string $lastname
+ * @property mixed $email_verified_at
+ * @property string $email
+ * @property string $password
+ * @property string $created_at
+ * @property string $updated_at
+ *
+ * Class User
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.

@@ -1,13 +1,13 @@
 import React, {Fragment} from "react";
 import BaseForm from "./base-form";
-import Input from "./common/input";
+import Input from "../common/input";
 
-export default class RegisterForm extends BaseForm {
+export default class LoginForm extends BaseForm {
     state = {
         fields: {
             email:  {
                 name: 'email',
-                value: '',
+                value: this.props.data.email || '',
                 error: '',
                 validation: {
                     required: true,
@@ -20,21 +20,8 @@ export default class RegisterForm extends BaseForm {
                 error: '',
                 validation: {
                     required: true,
-                    min: 6
                 }
             },
-            confirmPassword: {
-                name: 'confirmPassword',
-                value: '',
-                error: '',
-                validation: {
-                    required: true,
-                    confirm: {
-                        check: true,
-                        referenceValue: ''
-                    }
-                }
-            }
         },
         valid: false
     };
@@ -44,15 +31,22 @@ export default class RegisterForm extends BaseForm {
     };
 
     handleSubmit = e => {
-        e.preventDefault();
         console.log(this.getValue());
     }
 
     render() {
-        const {fields: {email,  password, confirmPassword}} = this.state;
+        const {fields: {email,  password}} = this.state;
+        const {action, token} = this.props;
         return (
             <Fragment>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} method="post" action={action}>
+
+                    {/*Token*/}
+                    <Input
+                        name="_token"
+                        value={token}
+                        type="hidden"
+                    />
 
                     {/*Email*/}
                     <Input
@@ -70,23 +64,16 @@ export default class RegisterForm extends BaseForm {
                         value={password.value}
                         error={password.error}
                         onChange={this.handleChange}
+                        type="password"
                     />
 
-                    {/*ConfirmPassword*/}
-                    <Input
-                        name={confirmPassword.name}
-                        label="Confirm Password"
-                        value={confirmPassword.value}
-                        error={confirmPassword.error}
-                        onChange={this.handleChange}
-                    />
 
                     <button
                         className="btn btn-primary btn-block mt-4 font-w600"
                         disabled={this.isInvalid()}
                         type="submit"
                     >
-                        Submit
+                        Login
                     </button>
                 </form>
             </Fragment>

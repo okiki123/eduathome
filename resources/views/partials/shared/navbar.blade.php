@@ -7,6 +7,7 @@ $route = Route::currentRouteName();
 ?>
 
 @if(in_array($route, $authRoutes))
+
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container d-flex justify-content-center">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -14,7 +15,9 @@ $route = Route::currentRouteName();
             </a>
         </div>
     </nav>
+
 @else
+
     <nav class="navbar navbar-expand-lg fixed-top bg-white navbar-light main-nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
@@ -34,7 +37,7 @@ $route = Route::currentRouteName();
                     </li>
                 </ul>
                 <div>
-                    <a class="btn btn-light btn-standard font-w600">Login</a>
+                    <a class="btn btn-light btn-standard font-w600" href="{{ route('login') }}">Login</a>
                     <a class="btn btn-primary btn-standard font-w600" href="{{ route('register') }}">Join</a>
                 </div>
             </div>

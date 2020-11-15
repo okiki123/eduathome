@@ -2,6 +2,9 @@
 
 return [
     'auth_routes' => [
-        'register'
+        'register',
+        'login',
+        'verification.notice',
+        'verification.verify'
     ]
 ];

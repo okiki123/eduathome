@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import RegisterForm from "./Register-Form";
+import RegisterForm from "./forms/Register-Form";
 
 export default class Register extends Component {
     state = {
@@ -14,8 +14,14 @@ export default class Register extends Component {
         this.setState({page: 1})
     }
 
+    componentDidMount() {
+        if (Object.keys(this.props.data).length) {
+            this.setState({page: 2})
+        }
+    }
+
     render() {
-        const {caregiver, parent} =  this.props;
+        const {caregiver, parent, route, token, loginRoute, data} =  this.props;
         return (
             <Fragment>
                 <div className="container register">
@@ -61,14 +67,17 @@ export default class Register extends Component {
                     {
                         this.state.page === 2 &&
                         <div className="auth-card  mx-auto">
-                            <div className="mb-3">
-                                <a className="back cursor-pointer" onClick={this.handlePrev}>
+                            <div className="mb-3 d-flex justify-content-between">
+                                <a className="auth-link cursor-pointer" onClick={this.handlePrev}>
                                     <i className="fas fa-long-arrow-alt-left mr-2"></i>
                                     Back
                                 </a>
+                                <a href={loginRoute} className="auth-link">
+                                    Login
+                                </a>
                             </div>
                             <div className="shadow p-3">
-                                <RegisterForm />
+                                <RegisterForm action={route} token={token} data={data} />
                             </div>
                         </div>
                     }

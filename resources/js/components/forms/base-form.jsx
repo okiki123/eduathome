@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {validate} from "./utils/validator";
+import {validate} from "../utils/validator";
 
 export default class BaseForm extends Component {
     isInvalid = () => {
@@ -24,8 +24,8 @@ export default class BaseForm extends Component {
         const fields = {...this.state.fields};
         fields[name].value = value;
         fields[name].error = validate(value, fields[name].validation, fields[name].name);
-        if ( name === 'password' && fields.confirmPassword) {
-            fields.confirmPassword.validation.confirm.referenceValue = value;
+        if ( name === 'password' && fields.password_confirmation) {
+            fields.password_confirmation.validation.confirm.referenceValue = value;
         }
         this.setState({fields});
     }

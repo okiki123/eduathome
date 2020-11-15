@@ -11462,12 +11462,12 @@ body {
   font-weight: bold;
 }
 
-.auth-pages .register .auth-card .back {
+.auth-pages .register .auth-card .auth-link {
   color: #1b5954;
   opacity: 0.8;
 }
 
-.auth-pages .register .auth-card .back:hover {
+.auth-pages .register .auth-card .auth-link:hover {
   opacity: 1;
   text-decoration: none;
 }

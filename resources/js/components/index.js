@@ -1,27 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Register from "./Register";
+import Login from "./Login";
 
-function Example() {
-    return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
+let token;
 
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+if (document.getElementById('csrf-token')) {
+    token = document.getElementById('csrf-token').getAttribute('content');
 }
-
-export default Example;
 
 if (document.getElementById('register')) {
     const element = document.getElementById('register');
     const props = JSON.parse(element.dataset.props);
+    props.token = token;
     ReactDOM.render(<Register {...props} />, document.getElementById('register'));
+}
+
+if (document.getElementById('login')) {
+    const element = document.getElementById('login');
+    const props = JSON.parse(element.dataset.props);
+    props.token = token;
+    ReactDOM.render(<Login {...props} />, document.getElementById('login'));
 }
