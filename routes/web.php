@@ -28,11 +28,6 @@ Route::get('/', function () {
         asset('images/success_stories__person3.jpg')
     ];
 
-    Mail::raw('Hello', function ($message) {
-        $message->to('abc@abc.com')
-            ->subject('Laravel Mail');
-    });
-
     return view('welcome', [
         'customers' => $customers,
         'caregivers' => $caregivers
