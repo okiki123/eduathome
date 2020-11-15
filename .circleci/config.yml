@@ -55,7 +55,7 @@ jobs:
             - node_modules
 
 #       prepare the database
-      - run: php artisan migrate --env=production
+      - run: php artisan migrate --env=production --force
       - slack/notify:
             event: pass
             template: success_tagged_deploy_1
