@@ -6,7 +6,7 @@ echo APP_KEY=base64:3qbaI+rPi7QiC6p78oOYuMx+MXKgbigi00v1GtQHz64= >> .env
 echo APP_DEBUG=true >> .env
 
 # Database Config
-echo DB_CONNECTION=mysql  >> .env
+echo DB_CONNECTION=$DB_CONNECTION  >> .env
 echo DB_HOST=$DB_HOST>> .env
 echo DB_PORT=3306 >> .env
 echo DB_DATABASE=$DB_DATABASE >> .env

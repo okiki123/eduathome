@@ -48,7 +48,7 @@ class RegistrationProcess extends BaseProcess
 
         VerificationToken::create(['user_id' => $userId, 'token' => $token, 'created_at' => $now]);
 
-        $verificationLink = url('email/verify', ['id' => $userId, 'hash' => $token]);
+        $verificationLink = route('verification.verify', ['id' => $userId, 'hash' => $token]);
 
         Mail::to($userEmail)
             ->send(new Registration($userFirstname, $verificationLink));
