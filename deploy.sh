@@ -12,3 +12,5 @@ echo DB_PORT=3306 >> .env
 echo DB_DATABASE=$DB_DATABASE >> .env
 echo DB_USERNAME=$DB_USERNAME >> .env
 echo DB_PASSWORD=$DB_PASSWORD >> .env
+
+cat .env
