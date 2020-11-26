@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 $route = Route::currentRouteName();
-    $authRoutes = config('custom.auth_routes');
+$authRoutes = config('custom.auth_routes');
 ?>
 
 @if(in_array($route, $authRoutes))
@@ -36,10 +36,18 @@ $route = Route::currentRouteName();
                         <a class="nav-link" href="#">About</a>
                     </li>
                 </ul>
-                <div>
-                    <a class="btn btn-light btn-standard font-w600" href="{{ route('login') }}">Login</a>
-                    <a class="btn btn-primary btn-standard font-w600" href="{{ route('register') }}">Join</a>
-                </div>
+
+                @auth()
+                    <div>
+                        <a class="btn btn-primary btn-standard font-w600" href="{{ route('dashboard.index') }}">Dashboard</a>
+                    </div>
+                @else
+                    <div>
+                        <a class="btn btn-light btn-standard font-w600" href="{{ route('login') }}">Login</a>
+                        <a class="btn btn-primary btn-standard font-w600" href="{{ route('register') }}">Join</a>
+                    </div>
+                @endauth
+
             </div>
         </div>
     </nav>

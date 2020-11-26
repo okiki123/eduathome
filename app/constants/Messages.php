@@ -2,6 +2,7 @@
 
 namespace App\Constants;
 
-class Messages {
+class Messages
+{
     const REGISTRATION_FAILED = 'Registration Failed';
 }

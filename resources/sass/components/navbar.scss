@@ -19,3 +19,37 @@
         }
     }
 }
+
+
+.dashboard-nav {
+    background-color: $dashboard-nav;
+
+    a.nav-link, .navbar-brand {
+        color: $white $im;
+    }
+
+    .nav-item {
+        .nav-link {
+            font-size: $nm-size;
+            transition: all 0.2s;
+
+            @include media-breakpoint-up(lg) {
+                padding: 0.6rem 1rem $im;
+            }
+
+            &:hover, &.active {
+                background-color: $dashboard-nav-light;
+            }
+        }
+    }
+
+    .dropdown-btn {
+        padding: .571429rem 1rem;
+        font-size: $nm-size;
+        border-radius: 50px;
+
+        &:hover, &:focus, &:active {
+            background-color: $dashboard-nav-light $im;
+        }
+    }
+}

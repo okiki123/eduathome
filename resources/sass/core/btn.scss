@@ -1,4 +1,9 @@
 .btn {
+    &:hover, &:focus, &:active {
+        outline: none;
+        box-shadow: none !important;
+    }
+
     &-primary {
         background-color: $primary-green;
         border-color: $primary-green;
@@ -8,8 +13,6 @@
             background-color: $primary-green !important;
             border-color: $primary-green !important;
             opacity: 0.9;
-            outline: none;
-            box-shadow: none !important;
         }
 
         &:disabled {

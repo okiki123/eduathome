@@ -1,2 +1,2 @@
-<img src="{{ asset('images/logo.jpg') }}" width="40" height="40" class="d-inline-block align-top" alt="">
-<span class="font-size-xl font-w600">Edu@Home</span>
+<img src="{{ asset('images/logo.jpg') }}" width="{{ $size ?? 40 }}" height="{{ $size ?? 40 }}" class="d-inline-block align-top" alt="">
+<span class="{{ $sizeClass ?? 'font-size-xl' }} {{ $weightClass ?? 'font-w600' }}">Edu@Home</span>
