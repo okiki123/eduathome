@@ -11150,6 +11150,13 @@ body {
   font-size: 46px !important;
 }
 
+.btn:hover,
+.btn:focus,
+.btn:active {
+  outline: none;
+  box-shadow: none !important;
+}
+
 .btn-primary {
   background-color: #1b5954;
   border-color: #1b5954;
@@ -11162,8 +11169,6 @@ body {
   background-color: #1b5954 !important;
   border-color: #1b5954 !important;
   opacity: 0.9;
-  outline: none;
-  box-shadow: none !important;
 }
 
 .btn-primary:disabled {
@@ -11222,6 +11227,43 @@ body {
 
 .main-nav .nav-item .nav-link:hover {
   color: #aba104 !important;
+}
+
+.dashboard-nav {
+  background-color: #343a40;
+}
+
+.dashboard-nav a.nav-link,
+.dashboard-nav .navbar-brand {
+  color: white !important;
+}
+
+.dashboard-nav .nav-item .nav-link {
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+@media (min-width: 992px) {
+  .dashboard-nav .nav-item .nav-link {
+    padding: 0.6rem 1rem !important;
+  }
+}
+
+.dashboard-nav .nav-item .nav-link:hover,
+.dashboard-nav .nav-item .nav-link.active {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-nav .dropdown-btn {
+  padding: 0.571429rem 1rem;
+  font-size: 14px;
+  border-radius: 50px;
+}
+
+.dashboard-nav .dropdown-btn:hover,
+.dashboard-nav .dropdown-btn:focus,
+.dashboard-nav .dropdown-btn:active {
+  background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .footer-distributed {
@@ -11470,5 +11512,24 @@ body {
 .auth-pages .register .auth-card .auth-link:hover {
   opacity: 1;
   text-decoration: none;
+}
+
+.dashboard-pages {
+  background-color: #f0f2f5;
+  min-height: 100%;
+}
+
+.dashboard-pages .dashboard-content {
+  padding-top: 70px;
+}
+
+.dashboard-pages .dashboard-content .settings .form-heading {
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 8px;
+  font-size: 1.428571rem;
+  font-weight: 400;
+  line-height: 28px;
+  border-bottom: 1px solid #e4e7ed;
 }
 

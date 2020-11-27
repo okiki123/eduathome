@@ -8,4 +8,6 @@ class PageTitle
     const LOGIN = 'Login';
     const EMAIL_SENT = 'Email sent';
     const VERIFIED = 'verified';
+    const DASHBOARD_SETTINGS = 'Dashboard - Settings';
+    const DASHBOARD = 'Dashboard';
 }

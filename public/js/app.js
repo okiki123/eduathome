@@ -67129,9 +67129,7 @@ var LoginForm = /*#__PURE__*/function (_BaseForm) {
       _this.validate(e.currentTarget);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
-      console.log(_this.getValue());
-    });
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {});
 
     return _this;
   }
@@ -67474,6 +67472,510 @@ var BaseForm = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/forms/basic-details-form.jsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/forms/basic-details-form.jsx ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BasicDetailsForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-form */ "./resources/js/components/forms/base-form.jsx");
+/* harmony import */ var _common_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/input */ "./resources/js/components/common/input.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var BasicDetailsForm = /*#__PURE__*/function (_BaseForm) {
+  _inherits(BasicDetailsForm, _BaseForm);
+
+  var _super = _createSuper(BasicDetailsForm);
+
+  function BasicDetailsForm() {
+    var _this;
+
+    _classCallCheck(this, BasicDetailsForm);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      fields: {
+        firstname: {
+          name: 'firstname',
+          value: _this.props.data.firstname || '',
+          error: '',
+          validation: {
+            required: true
+          }
+        },
+        lastname: {
+          name: 'lastname',
+          value: _this.props.data.lastname || '',
+          error: '',
+          validation: {
+            required: true
+          }
+        },
+        email: {
+          name: 'email',
+          value: _this.props.data.email || '',
+          error: '',
+          validation: {
+            required: true,
+            email: true
+          }
+        }
+      },
+      valid: false
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      _this.validate(e.currentTarget);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {});
+
+    return _this;
+  }
+
+  _createClass(BasicDetailsForm, [{
+    key: "render",
+    value: function render() {
+      var _this$state$fields = this.state.fields,
+          firstname = _this$state$fields.firstname,
+          lastname = _this$state$fields.lastname,
+          email = _this$state$fields.email;
+      var _this$props = this.props,
+          action = _this$props.action,
+          token = _this$props.token;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        method: "post",
+        action: action
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "_token",
+        value: token,
+        type: "hidden"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: firstname.name,
+        label: "Firstname",
+        value: firstname.value,
+        error: firstname.error,
+        onChange: this.handleChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: lastname.name,
+        label: "Lastname",
+        value: lastname.value,
+        error: lastname.error,
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: email.name,
+        label: "Email",
+        value: email.value,
+        error: email.error,
+        readonly: "true",
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-standard mt-2 font-w600",
+        disabled: this.isInvalid(),
+        type: "submit"
+      }, "Update")));
+    }
+  }]);
+
+  return BasicDetailsForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/forms/contact-details-form.jsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/forms/contact-details-form.jsx ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ContactDetailsForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-form */ "./resources/js/components/forms/base-form.jsx");
+/* harmony import */ var _common_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/input */ "./resources/js/components/common/input.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var ContactDetailsForm = /*#__PURE__*/function (_BaseForm) {
+  _inherits(ContactDetailsForm, _BaseForm);
+
+  var _super = _createSuper(ContactDetailsForm);
+
+  function ContactDetailsForm() {
+    var _this;
+
+    _classCallCheck(this, ContactDetailsForm);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      fields: {
+        street1: {
+          name: 'street1',
+          value: _this.props.data.street1 || '',
+          error: '',
+          validation: {
+            required: true
+          }
+        },
+        street2: {
+          name: 'street2',
+          value: _this.props.data.street2 || '',
+          error: ''
+        },
+        city: {
+          name: 'city',
+          value: _this.props.data.street1 || '',
+          error: '',
+          validation: {
+            required: true
+          }
+        },
+        state: {
+          name: 'state',
+          value: _this.props.data.street1 || '',
+          error: '',
+          validation: {
+            required: true
+          }
+        }
+      },
+      valid: false
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      _this.validate(e.currentTarget);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {});
+
+    return _this;
+  }
+
+  _createClass(ContactDetailsForm, [{
+    key: "render",
+    value: function render() {
+      var _this$state$fields = this.state.fields,
+          city = _this$state$fields.city,
+          street1 = _this$state$fields.street1,
+          street2 = _this$state$fields.street2,
+          state = _this$state$fields.state;
+      var _this$props = this.props,
+          action = _this$props.action,
+          token = _this$props.token;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        method: "post",
+        action: action
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "_token",
+        value: token,
+        type: "hidden"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: street1.name,
+        label: "Street Address 1",
+        value: street1.value,
+        error: street1.error,
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: street2.name,
+        label: "Street Address 2",
+        value: street2.value,
+        error: street2.error,
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: city.name,
+        label: "City",
+        value: city.value,
+        error: city.error,
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: state.name,
+        label: "State",
+        value: state.value,
+        error: state.error,
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-standard mt-2 font-w600",
+        disabled: this.isInvalid(),
+        type: "submit"
+      }, "Update")));
+    }
+  }]);
+
+  return ContactDetailsForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/forms/settings-password-form.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/forms/settings-password-form.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SettingsPasswordForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-form */ "./resources/js/components/forms/base-form.jsx");
+/* harmony import */ var _common_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/input */ "./resources/js/components/common/input.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var SettingsPasswordForm = /*#__PURE__*/function (_BaseForm) {
+  _inherits(SettingsPasswordForm, _BaseForm);
+
+  var _super = _createSuper(SettingsPasswordForm);
+
+  function SettingsPasswordForm() {
+    var _this;
+
+    _classCallCheck(this, SettingsPasswordForm);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      fields: {
+        currentPassword: {
+          name: 'currentPassword',
+          value: '',
+          error: '',
+          validation: {
+            required: true
+          }
+        },
+        password: {
+          name: 'password',
+          value: '',
+          error: '',
+          validation: {
+            required: true,
+            min: 6
+          }
+        },
+        password_confirmation: {
+          name: 'password_confirmation',
+          value: '',
+          error: '',
+          validation: {
+            required: true,
+            confirm: {
+              check: true,
+              referenceValue: ''
+            }
+          }
+        }
+      },
+      valid: false
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      _this.validate(e.currentTarget);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {});
+
+    return _this;
+  }
+
+  _createClass(SettingsPasswordForm, [{
+    key: "render",
+    value: function render() {
+      var _this$state$fields = this.state.fields,
+          currentPassword = _this$state$fields.currentPassword,
+          password = _this$state$fields.password,
+          password_confirmation = _this$state$fields.password_confirmation;
+      var _this$props = this.props,
+          action = _this$props.action,
+          token = _this$props.token;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        method: "post",
+        action: action
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "_token",
+        value: token,
+        type: "hidden"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: currentPassword.name,
+        label: "Current Password",
+        value: currentPassword.value,
+        error: currentPassword.error,
+        type: "password",
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: password.name,
+        label: "New Password",
+        value: password.value,
+        error: password.error,
+        type: "password",
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: password_confirmation.name,
+        label: "Confirm New Password",
+        value: password_confirmation.value,
+        error: password_confirmation.error,
+        type: "password",
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-standard mt-2 font-w600",
+        disabled: this.isInvalid(),
+        type: "submit"
+      }, "Update")));
+    }
+  }]);
+
+  return SettingsPasswordForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/index.js":
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
@@ -67489,6 +67991,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Register */ "./resources/js/components/Register.jsx");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Login */ "./resources/js/components/Login.jsx");
+/* harmony import */ var _forms_contact_details_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./forms/contact-details-form */ "./resources/js/components/forms/contact-details-form.jsx");
+/* harmony import */ var _forms_basic_details_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./forms/basic-details-form */ "./resources/js/components/forms/basic-details-form.jsx");
+/* harmony import */ var _forms_settings_password_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./forms/settings-password-form */ "./resources/js/components/forms/settings-password-form.jsx");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
 
 
 
@@ -67503,7 +68013,7 @@ if (document.getElementById('register')) {
   var element = document.getElementById('register');
   var props = JSON.parse(element.dataset.props);
   props.token = token;
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Register__WEBPACK_IMPORTED_MODULE_2__["default"], props), document.getElementById('register'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Register__WEBPACK_IMPORTED_MODULE_2__["default"], props), element);
 }
 
 if (document.getElementById('login')) {
@@ -67512,7 +68022,36 @@ if (document.getElementById('login')) {
   var _props = JSON.parse(_element.dataset.props);
 
   _props.token = token;
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login__WEBPACK_IMPORTED_MODULE_3__["default"], _props), document.getElementById('login'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, _props, {
+    l: true
+  })), _element);
+}
+
+if (document.getElementById('settings-contact-details')) {
+  var _element2 = document.getElementById('settings-contact-details');
+
+  var _props2 = JSON.parse(_element2.dataset.props);
+
+  _props2.token = token;
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_contact_details_form__WEBPACK_IMPORTED_MODULE_4__["default"], _props2), _element2);
+}
+
+if (document.getElementById('settings-basic-details')) {
+  var _element3 = document.getElementById('settings-basic-details');
+
+  var _props3 = JSON.parse(_element3.dataset.props);
+
+  _props3.token = token;
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_basic_details_form__WEBPACK_IMPORTED_MODULE_5__["default"], _props3), _element3);
+}
+
+if (document.getElementById('settings-password')) {
+  var _element4 = document.getElementById('settings-password');
+
+  var _props4 = {
+    token: token
+  };
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_settings_password_form__WEBPACK_IMPORTED_MODULE_6__["default"], _props4), _element4);
 }
 
 /***/ }),

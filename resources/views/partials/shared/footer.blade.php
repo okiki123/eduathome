@@ -6,7 +6,7 @@ $route = Route::currentRouteName();
 $authRoutes = config('custom.auth_routes');
 ?>
 
-@if(in_array($route, $authRoutes))
+@if(in_array($route, $authRoutes) || \Illuminate\Support\Facades\Request::is('dashboard*'))
     <footer class="main-footer p-3 font-size-nm d-flex justify-content-center">
         <div>
             <span>Copyright © 2020 </span>

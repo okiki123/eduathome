@@ -31,7 +31,6 @@ export default class LoginForm extends BaseForm {
     };
 
     handleSubmit = e => {
-        console.log(this.getValue());
     }
 
     render() {

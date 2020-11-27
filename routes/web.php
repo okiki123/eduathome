@@ -36,8 +36,10 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::group(['prefix' => 'dashboard'], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
+
+    Route::get('/settings', 'UserSettingsController@index')->name('dashboard.settings');
 
 });

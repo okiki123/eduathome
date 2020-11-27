@@ -1,3 +1,11 @@
+<?php
+
+use App\Constants\PageTitle;
+
+$title = PageTitle::DASHBOARD;
+
+?>
+
 @extends('layouts.dashboard')
 
 @section('content')

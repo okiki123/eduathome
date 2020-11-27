@@ -34,7 +34,7 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-memu-user" aria-labelledby="userOptions">
                     <a class="dropdown-item disabled text-center font-size-nm font-w600 py-10 text-uppercase">User</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item font-size-nm" href="#">
+                    <a class="dropdown-item font-size-nm" href="{{ route('dashboard.settings') }}">
                         <span class="iconify mr-2" data-icon="simple-line-icons:wrench" data-inline="false"></span>
                         Settings
                     </a>

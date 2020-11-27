@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $title }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,12 +23,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
+<div id="app" class="d-flex flex-column dashboard-pages">
     @include('partials.dashboard.navbar')
 
-    <main class="py-4">
+    <main class="flex-grow-1 dashboard-content">
         @yield('content')
     </main>
+
+    @include('partials.shared.footer')
 </div>
 </body>
 </html>
