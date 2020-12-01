@@ -20,17 +20,10 @@
 </head>
 <body>
 
+@include('partials.shared.toastr')
+
 <div id="app" class="d-flex justify-content-between flex-column auth-pages">
     @include('partials.shared.navbar')
-
-    @if($errors->any())
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ $errors->all()[0] }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
 
     <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-4">
         @yield('content');

@@ -47,15 +47,22 @@ export default class SettingsPasswordForm extends BaseForm {
 
     render() {
         const {fields: {currentPassword, password, password_confirmation}} = this.state;
-        const {action, token} = this.props;
+        const {route, token} = this.props;
         return (
             <Fragment>
-                <form onSubmit={this.handleSubmit} method="post" action={action}>
+                <form onSubmit={this.handleSubmit} method="post" action={route}>
 
                     {/*Token*/}
                     <Input
                         name="_token"
                         value={token}
+                        type="hidden"
+                    />
+
+                    {/*Method*/}
+                    <Input
+                        name="_method"
+                        value="PUT"
                         type="hidden"
                     />
 

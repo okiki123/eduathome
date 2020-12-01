@@ -42,4 +42,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     Route::get('/settings', 'UserSettingsController@index')->name('dashboard.settings');
 
+    Route::put('/basic-details', 'UserSettingsController@updateBasicDetails')->name('dashboard.update.basic-details');
+
+    Route::put('/contact-details', 'UserSettingsController@updateContactDetails')->name('dashboard.update.contact-details');
+
+    Route::put('/password', 'UserSettingsController@updatePassword')->name('dashboard.update.password');
 });

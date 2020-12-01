@@ -36,7 +36,7 @@ export default class Register extends Component {
                                     className="shadow-sm d-flex justify-content-between align-items-center p-4 cursor-pointer"
                                     onClick={this.handleNext}
                                 >
-                                    <div>
+                                    <div className="d-flex align-items-center">
                                         <img src="/images/register__teacher.svg" width="100" height="100" className="mr-3" />
                                         <span className="font-size-xl">{caregiver}</span>
                                     </div>
@@ -52,7 +52,7 @@ export default class Register extends Component {
                                     className="shadow-sm d-flex justify-content-between align-items-center p-4 cursor-pointer"
                                     onClick={this.handleNext}
                                 >
-                                    <div>
+                                    <div className="d-flex align-items-center">
                                         <img src="/images/register__parent.svg" width="100" height="100" className="mr-3" />
                                         <span className="font-size-xl">{parent}</span>
                                     </div>

@@ -73,7 +73,7 @@ class RegisterController extends Controller
 
             DB::rollBack();
 
-            return back()->with('message', Messages::REGISTRATION_FAILED);
+            return $this->returnError($ex->getMessage());
         }
     }
 

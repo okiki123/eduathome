@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * @property integer $id
@@ -49,5 +50,15 @@ class User extends Authenticatable
     public function fullname()
     {
         return $this->firstname . ' ' . $this->lastname;
+    }
+
+    public function caregiver()
+    {
+        return $this->hasOne(Caregiver::class);
+    }
+
+    public function validatePassword($password)
+    {
+        return Hash::check($password, $this->password);
     }
 }

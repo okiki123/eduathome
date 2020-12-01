@@ -1,7 +1,26 @@
 .form-control {
-  &:focus {
-    box-shadow: none $im;
-  }
+    border-radius: 4px $im;
+
+    &:focus {
+      box-shadow: 0 0 0 1px $input-hover-color $im;
+      border-color: $input-hover-color;
+    }
+}
+
+.css-1pahdxg-control {
+    box-shadow: 0 0 0 1px $input-hover-color $im;
+    border-color: $input-hover-color $im;
+}
+
+.css-g1d714-ValueContainer {
+    height: calc(1.5em + 0.75rem + 2px);
+}
+
+.is-invalid {
+    .css-yk16xz-control, .css-1pahdxg-control {
+        border-color: $danger $im;
+        box-shadow: none $im;
+    }
 }
 
 

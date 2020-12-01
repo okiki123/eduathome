@@ -43,15 +43,22 @@ export default class BasicDetailsForm extends BaseForm {
 
     render() {
         const {fields: {firstname, lastname, email}} = this.state;
-        const {action, token} = this.props;
+        const {route, token} = this.props;
         return (
             <Fragment>
-                <form onSubmit={this.handleSubmit} method="post" action={action}>
+                <form onSubmit={this.handleSubmit} method="post" action={route}>
 
                     {/*Token*/}
                     <Input
                         name="_token"
                         value={token}
+                        type="hidden"
+                    />
+
+                    {/*Method*/}
+                    <Input
+                        name="_method"
+                        value="PUT"
                         type="hidden"
                     />
 

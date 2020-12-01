@@ -5,13 +5,20 @@ use App\Constants\PageTitle;
 $title = PageTitle::DASHBOARD_SETTINGS;
 
 $basicData = [
-    'route' => route('login'),
+    'route' => route('dashboard.update.basic-details'),
     'data' => auth()->user() ?? old()
 ];
 
 $contactData = [
-    'route' => route('login'),
-    'data' => auth()->user() ?? old()
+    'route' => route('dashboard.update.contact-details'),
+    'data' => auth()->user() ?? old(),
+    'caregiver' => $caregiver,
+    'states' => $states,
+    'cities' => $cities
+];
+
+$passwordData = [
+    'route' => route('dashboard.update.password')
 ];
 
 ?>
@@ -52,7 +59,7 @@ $contactData = [
                         <p class="text-muted mb-20">Your personal information to verify your Identity.</p>
                     </div>
                     <div class="offset-lg-1 col-lg-7">
-                        <!--Rendered by react in js/components/forms/contact-details-form.jsx -->
+                        <!--Rendered by react in js/components/forms/settings-password-form.jsx -->
                         <div id="settings-contact-details" data-props="{{ json_encode($contactData) }}"></div>
                     </div>
                 </div>
@@ -69,7 +76,7 @@ $contactData = [
                     </div>
                     <div class="offset-lg-1 col-lg-7">
                         <!--Rendered by react in js/components/forms/settings-password-form.jsx -->
-                        <div id="settings-password"></div>
+                        <div id="settings-password" data-props="{{ json_encode($passwordData) }}"></div>
                     </div>
                 </div>
             </div>

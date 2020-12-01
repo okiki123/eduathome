@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {validate} from "../utils/validator";
+import {validate} from "../../utils/validator";
 
 export default class BaseForm extends Component {
     isInvalid = () => {

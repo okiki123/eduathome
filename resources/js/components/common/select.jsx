@@ -1,24 +1,25 @@
 import React from "react";
+import ReactSelect from "react-select";
 import PropTypes from "prop-types";
 
-const Select = ({ name, label, options = [], prompt = 'Select', error, className, ...rest }) => {
+const Select = ({ name, label, prompt = 'Select', error, className = '', value, ...rest }) => {
     return (
         <div className="form-group">
             {
                 label && <label className={`${error ? 'text-danger' : ''}`} htmlFor={name}>{label}</label>
             }
-            <select
-                   className={`form-control ${className} ${error ? 'is-invalid' : ''}`}
+            <ReactSelect
+                   className={`basic-single ${className} ${error ? 'is-invalid' : ''}`}
                    id={name}
                    name={name}
-                   aria-describedby={name}
+                   classNamePrefix="select"
+                   isSearchable={true}
+                   isClearable={true}
+                   isLoading={false}
+                   isRtl={false}
                    {...rest}
-            >
-                <option value="">{prompt}</option>
-                {
-                    options.map((option, i) => <option key={i} value={option.value}>{option.label}</option>)
-                }
-            </select>
+            />
+            <input type="hidden" name={name} value={value}/>
             {
                 error && <small id={`${name}`} className="form-text text-danger">{error}</small>
             }
@@ -30,7 +31,7 @@ Select.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string,
     type: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.any,
     className: PropTypes.string,
     prompt: PropTypes.string,
     error: PropTypes.string,

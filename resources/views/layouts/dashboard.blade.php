@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta id="csrf-token" name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $title }}</title>
 
@@ -23,6 +23,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+@include('partials.shared.toastr')
+
 <div id="app" class="d-flex flex-column dashboard-pages">
     @include('partials.dashboard.navbar')
 

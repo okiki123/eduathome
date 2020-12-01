@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -79,5 +80,21 @@ class LoginController extends Controller
         return $request->wantsJson()
             ? new JsonResponse([], 204)
             : redirect()->route('login');
+    }
+
+    /**
+     * Validate the user login request.
+     *
+     * @param Request $request
+     * @return void
+     *
+     * @throws ValidationException
+     */
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string|exists:users,email',
+            'password' => 'required|string',
+        ], ['email.exists' => 'There is no account with that email']);
     }
 }
