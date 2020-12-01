@@ -46,7 +46,7 @@ class RegistrationProcess extends BaseProcess
 
         $token = md5($expiresAt);
 
-        VerificationToken::create(['user_id' => $userId, 'token' => $token, 'created_at' => $now]);
+        VerificationToken::create(['user_id' => $userId, 'token' => $token, 'expires_at' => $expiresAt, 'created_at' => $now]);
 
         $verificationLink = route('verification.verify', ['id' => $userId, 'hash' => $token]);
 
