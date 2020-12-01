@@ -12,8 +12,7 @@ class UserSettingsController extends Controller
 {
     public function index()
     {
-        $user = auth()->user()::with('caregiver')->first();
-        $caregiver = $user['caregiver'];
+        $caregiver = auth()->user()->caregiver()->first();
         $states = State::getStates();
         $cities = [];
 
