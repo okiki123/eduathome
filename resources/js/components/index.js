@@ -6,6 +6,7 @@ import ContactDetailsForm from "./forms/contact-details-form";
 import BasicDetailsForm from "./forms/basic-details-form";
 import SettingsPasswordForm from "./forms/settings-password-form";
 import Toastr from "./common/toastr";
+import BioResumeForm from "./forms/bio-resume-form";
 
 let token;
 
@@ -52,6 +53,14 @@ if (document.getElementById('settings-password')) {
     let props = JSON.parse(element.dataset.props);
     props.token = token;
     ReactDOM.render(<SettingsPasswordForm {...props} />, element);
+}
+
+// User settings Page - Bio and Resume form
+if (document.getElementById('bio-and-resume')) {
+    const element = document.getElementById('bio-and-resume');
+    let props = JSON.parse(element.dataset.props);
+    props.token = token;
+    ReactDOM.render(<BioResumeForm {...props} />, element);
 }
 
 // Toastr Notification

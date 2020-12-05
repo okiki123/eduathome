@@ -76419,6 +76419,73 @@ Select.propTypes = {
 
 /***/ }),
 
+/***/ "./resources/js/components/common/text-area.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/common/text-area.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var TextArea = function TextArea(_ref) {
+  var name = _ref.name,
+      label = _ref.label,
+      error = _ref.error,
+      className = _ref.className,
+      placeholder = _ref.placeholder,
+      _ref$rows = _ref.rows,
+      rows = _ref$rows === void 0 ? "4" : _ref$rows,
+      rest = _objectWithoutProperties(_ref, ["name", "label", "error", "className", "placeholder", "rows"]);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "".concat(error ? 'text-danger' : ''),
+    htmlFor: name
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", _extends({
+    name: name,
+    className: "form-control ".concat(className, " ").concat(error ? 'is-invalid' : ''),
+    id: name,
+    rows: rows,
+    "aria-describedby": name,
+    style: {
+      resize: "none"
+    }
+  }, rest), placeholder || ''), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    id: "emailHelp",
+    className: "form-text text-danger"
+  }, error));
+};
+
+TextArea.propTypes = {
+  name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  error: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onKeyUp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+/* harmony default export */ __webpack_exports__["default"] = (TextArea);
+
+/***/ }),
+
 /***/ "./resources/js/components/common/toastr.jsx":
 /*!***************************************************!*\
   !*** ./resources/js/components/common/toastr.jsx ***!
@@ -77036,6 +77103,131 @@ var BasicDetailsForm = /*#__PURE__*/function (_BaseForm) {
 
 /***/ }),
 
+/***/ "./resources/js/components/forms/bio-resume-form.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/forms/bio-resume-form.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BioResumeForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-form */ "./resources/js/components/forms/base-form.jsx");
+/* harmony import */ var _common_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/input */ "./resources/js/components/common/input.jsx");
+/* harmony import */ var _common_text_area__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/text-area */ "./resources/js/components/common/text-area.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+var BioResumeForm = /*#__PURE__*/function (_BaseForm) {
+  _inherits(BioResumeForm, _BaseForm);
+
+  var _super = _createSuper(BioResumeForm);
+
+  function BioResumeForm() {
+    var _this;
+
+    _classCallCheck(this, BioResumeForm);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      fields: {
+        bio: {
+          name: 'bio',
+          value: _this.props.data.bio || '',
+          error: '',
+          validation: {
+            required: true
+          }
+        }
+      },
+      valid: false
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      _this.validate(e.currentTarget);
+    });
+
+    return _this;
+  }
+
+  _createClass(BioResumeForm, [{
+    key: "render",
+    value: function render() {
+      var bio = this.state.fields.bio;
+      var _this$props = this.props,
+          route = _this$props.route,
+          token = _this$props.token;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        method: "post",
+        action: route
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "_token",
+        value: token,
+        type: "hidden"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "_method",
+        value: "PUT",
+        type: "hidden"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_text_area__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: bio.name,
+        label: "Bio",
+        value: bio.value,
+        error: bio.error,
+        onChange: this.handleChange
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-standard mt-2 font-w600",
+        disabled: this.isInvalid(),
+        type: "submit"
+      }, "Update")));
+    }
+  }]);
+
+  return BioResumeForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/forms/contact-details-form.jsx":
 /*!****************************************************************!*\
   !*** ./resources/js/components/forms/contact-details-form.jsx ***!
@@ -77504,7 +77696,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_basic_details_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./forms/basic-details-form */ "./resources/js/components/forms/basic-details-form.jsx");
 /* harmony import */ var _forms_settings_password_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./forms/settings-password-form */ "./resources/js/components/forms/settings-password-form.jsx");
 /* harmony import */ var _common_toastr__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/toastr */ "./resources/js/components/common/toastr.jsx");
+/* harmony import */ var _forms_bio_resume_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./forms/bio-resume-form */ "./resources/js/components/forms/bio-resume-form.jsx");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -77569,15 +77763,25 @@ if (document.getElementById('settings-password')) {
 
   _props4.token = token;
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_settings_password_form__WEBPACK_IMPORTED_MODULE_6__["default"], _props4), _element4);
+} // User settings Page - Bio and Resume form
+
+
+if (document.getElementById('bio-and-resume')) {
+  var _element5 = document.getElementById('bio-and-resume');
+
+  var _props5 = JSON.parse(_element5.dataset.props);
+
+  _props5.token = token;
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_bio_resume_form__WEBPACK_IMPORTED_MODULE_8__["default"], _props5), _element5);
 } // Toastr Notification
 
 
 if (document.getElementById('toastr-notification')) {
-  var _element5 = document.getElementById('toastr-notification');
+  var _element6 = document.getElementById('toastr-notification');
 
-  var _props5 = JSON.parse(_element5.dataset.props);
+  var _props6 = JSON.parse(_element6.dataset.props);
 
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_toastr__WEBPACK_IMPORTED_MODULE_7__["default"], _props5), _element5);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_toastr__WEBPACK_IMPORTED_MODULE_7__["default"], _props6), _element6);
 }
 
 /***/ }),

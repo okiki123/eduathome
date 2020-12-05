@@ -11,7 +11,7 @@ $basicData = [
 
 $contactData = [
     'route' => route('dashboard.update.contact-details'),
-    'data' => auth()->user() ?? old(),
+    'data' => old(),
     'caregiver' => $caregiver,
     'states' => $states,
     'cities' => $cities
@@ -21,14 +21,24 @@ $passwordData = [
     'route' => route('dashboard.update.password')
 ];
 
+$bioData = [
+    'route' => route('dashboard.update.bio-resume'),
+    'data' => $caregiver ?? old()
+];
+
 ?>
 
 @extends('layouts.dashboard')
 
 @section('content')
     <div class="mx-auto mxw-1200 settings p-3 pt-0">
-        <div class="name my-50">
-            <h4 class="text-center">{{ auth()->user()->fullname() }}</h4>
+        <div class="image my-20">
+            <div class="text-center">
+                <img src="{{ asset('images/avatar/avatar.svg') }}" width="150" height="150">
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-sm btn-link mt-1 font-size-sm" title="Change avatar">Change</button>
+            </div>
         </div>
 
         <div class="card box-shadow p-20 mb-4 pb-5">
@@ -45,6 +55,22 @@ $passwordData = [
                     <div class="offset-lg-1 col-lg-7">
                         <!--Rendered by react in js/components/forms/basic-details-form.jsx -->
                         <div id="settings-basic-details" data-props="{{ json_encode($basicData) }}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio and Resume -->
+            <div class="email">
+                <h2 class="form-heading">
+                    Bio and Resume
+                </h2>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <p class="text-muted mb-20">Tell us about yourself.</p>
+                    </div>
+                    <div class="offset-lg-1 col-lg-7">
+                        <!--Rendered by react in js/components/forms/basic-details-form.jsx -->
+                        <div id="bio-and-resume" data-props="{{ json_encode($bioData) }}"></div>
                     </div>
                 </div>
             </div>

@@ -46,5 +46,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     Route::put('/contact-details', 'UserSettingsController@updateContactDetails')->name('dashboard.update.contact-details');
 
+    Route::put('/bio-resume', 'UserSettingsController@updateBioAndResume')->name('dashboard.update.bio-resume');
+
     Route::put('/password', 'UserSettingsController@updatePassword')->name('dashboard.update.password');
 });

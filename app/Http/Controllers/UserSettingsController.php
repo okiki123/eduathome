@@ -31,10 +31,10 @@ class UserSettingsController extends Controller
     {
         try {
             auth()->user()->update($request->all());
-            return  $this->returnSuccess('Your details updated successfully');
+            return  $this->returnSuccess(Messages::successMessage('Your details', 'updated'));
         } catch (Exception $ex) {
             report($ex);
-            return $this->returnError('Failed to update your details');
+            return $this->returnError(Messages::failedMessage('update', 'your details'));
         }
     }
 
@@ -52,10 +52,25 @@ class UserSettingsController extends Controller
 
         try {
             auth()->user()->caregiver()->update($data);
-            return  $this->returnSuccess('Your details updated successfully');
+            return  $this->returnSuccess(Messages::successMessage('Your details', 'updated'));
         } catch (Exception $ex) {
             report($ex);
-            return $this->returnError($ex->getMessage());
+            return $this->returnError(Messages::failedMessage('update', 'your details'));
+        }
+    }
+
+    public function updateBioAndResume(Request $request)
+    {
+        $request->validate([
+            'bio' => 'required'
+        ]);
+
+        try {
+            auth()->user()->caregiver()->update($request->only(['bio']));
+            return  $this->returnSuccess(Messages::successMessage('Your details', 'updated'));
+        } catch (Exception $ex) {
+            report($ex);
+            return $this->returnError(Messages::failedMessage('update', 'your details'));
         }
     }
 
@@ -74,11 +89,9 @@ class UserSettingsController extends Controller
 
         try {
             auth()->user()->update($request->only(['password']));
-
             return $this->returnSuccess('Password updated successfully');
         } catch (Exception $ex) {
             report($ex);
-
             return $this->returnError('Failed to update your password');
         }
     }
