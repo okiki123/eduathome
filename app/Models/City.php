@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class City
  * @package App\Models
  */
-class City extends Model {
+class City extends BaseModel {
     /**
      * @var array
      */

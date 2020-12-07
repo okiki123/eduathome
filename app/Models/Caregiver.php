@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\GetAddress;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,7 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class Caregiver
  * @package App\Models
  */
-class Caregiver extends Model {
+class Caregiver extends BaseModel {
+    use GetAddress;
     /**
      * @var array
      */

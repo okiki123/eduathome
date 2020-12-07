@@ -11189,6 +11189,11 @@ body {
   margin-top: 20px;
 }
 
+.my-30 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
 .my-50 {
   margin-bottom: 50px;
   margin-top: 50px;
@@ -11284,6 +11289,10 @@ body {
 
 .ck-content {
   height: 300px;
+}
+
+.mnw-200px {
+  min-width: 200px;
 }
 
 .text-primary {

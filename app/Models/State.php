@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Caregiver
  * @package App\Models
  */
-class State extends Model {
+class State extends BaseModel {
     /**
      * @var array
      */

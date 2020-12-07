@@ -40,6 +40,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
 
+    Route::get('/profile/{id}', 'CareSupportTeacherController@profile')->name('dashboard.profile');
+
     Route::get('/settings', 'UserSettingsController@index')->name('dashboard.settings');
 
     Route::put('/basic-details', 'UserSettingsController@updateBasicDetails')->name('dashboard.update.basic-details');

@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class VerificationToken
  * @package App\Models
  */
-class VerificationToken extends Model {
+class VerificationToken extends BaseModel {
     use GetUser;
 
     /**

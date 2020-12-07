@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
  * @property string $lastname
  * @property mixed $email_verified_at
  * @property string $email
+ * @property string $status
  * @property string $password
  * @property string $created_at
  * @property string $updated_at

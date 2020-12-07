@@ -31,10 +31,14 @@
                     {{ auth()->user()->firstname }}
                     <span class="iconify" data-icon="bx:bxs-chevron-down" data-inline="false"></span>
                 </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-memu-user" aria-labelledby="userOptions">
-                    <a class="dropdown-item disabled text-center font-size-nm font-w600 py-10 text-uppercase">User</a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-memu-user mnw-200px" aria-labelledby="userOptions">
+                    <a class="dropdown-item disabled text-center font-size-nm font-w600 py-10 text-uppercase">{{auth()->user()->fullname()}}</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item font-size-nm" href="{{ route('dashboard.settings') }}">
+                    <a class="dropdown-item font-size-nm my-2" href="{{ route('dashboard.profile', ['id' => auth()->user()->id]) }}">
+                        <span class="iconify mr-2" data-icon="simple-line-icons:user" data-inline="false"></span>
+                        Profile
+                    </a>
+                    <a class="dropdown-item font-size-nm my-2" href="{{ route('dashboard.settings') }}">
                         <span class="iconify mr-2" data-icon="simple-line-icons:wrench" data-inline="false"></span>
                         Settings
                     </a>
