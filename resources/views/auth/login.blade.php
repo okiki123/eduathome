@@ -1,12 +1,14 @@
 <?php
 
 use App\Constants\PageTitle;
+use Illuminate\Support\Facades\Route;
 
-$title = PageTitle::REGISTER;
+$title = Route::currentRouteName() === 'admin.login' ? PageTitle::ADMIN_LOGIN : PageTitle::LOGIN;
 $data = [
-    'route' => route('login'),
+    'route' => Route::currentRouteName() === 'admin.login' ? route('admin.authenticate') : route('login'),
     'registerRoute' => route('register'),
-    'data' => old()
+    'data' => old(),
+    'type' => Route::currentRouteName() === 'admin.login' ? 'admin' : 'default'
 ]
 ?>
 

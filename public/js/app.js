@@ -75940,6 +75940,8 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 __webpack_require__(/*! ./components */ "./resources/js/components/index.js");
 
+__webpack_require__(/*! ./dom-scripting */ "./resources/js/dom-scripting/index.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -76095,25 +76097,28 @@ var Login = /*#__PURE__*/function (_Component) {
           route = _this$props.route,
           token = _this$props.token,
           registerRoute = _this$props.registerRoute,
-          data = _this$props.data;
+          data = _this$props.data,
+          type = _this$props.type;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container register"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "mb-4 text-center font-w600"
-      }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mb-3 text-center font-w600"
+      }, "Welcome"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "mb-4 font-size-lg text-center"
+      }, "Please use your credentials to continue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-card  mx-auto"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "mb-3 d-flex justify-content-end"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "auth-link cursor-pointer",
-        href: registerRoute
-      }, "Register")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "shadow p-3"
+        className: "p-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_Login_form__WEBPACK_IMPORTED_MODULE_1__["default"], {
         action: route,
         token: token,
         data: data
-      })))));
+      })), type === 'default' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mt-2 px-3"
+      }, "Don't have an account? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "auth-link cursor-pointer",
+        href: registerRoute
+      }, "Register")))));
     }
   }]);
 
@@ -76221,9 +76226,11 @@ var Register = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container register"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "mb-4 text-center font-w600"
-      }, "Register"), this.state.page === 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "mb-2 text-center font-w600"
+      }, "Welcome"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "mb-4 font-size-lg text-center"
+      }, "Create your account today"), this.state.page === 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row mt-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-xl-4 col-md-5 offset-xl-2 offset-md-1 mb-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -76259,22 +76266,24 @@ var Register = /*#__PURE__*/function (_Component) {
       }))))), this.state.page === 2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-card  mx-auto"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "mb-3 d-flex justify-content-between"
+        className: "d-flex justify-content-between"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "auth-link cursor-pointer",
         onClick: this.handlePrev
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-long-arrow-alt-left mr-2"
-      }), "Back"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: loginRoute,
-        className: "auth-link"
-      }, "Login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "shadow p-3"
+      }), "Back")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "p-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_Register_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
         action: route,
         token: token,
         data: data
-      })))));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mt-2 px-3 mb-5"
+      }, "Have an account? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: loginRoute,
+        className: "auth-link"
+      }, "Login")))));
     }
   }]);
 
@@ -77783,6 +77792,32 @@ if (document.getElementById('toastr-notification')) {
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_toastr__WEBPACK_IMPORTED_MODULE_7__["default"], _props6), _element6);
 }
+
+/***/ }),
+
+/***/ "./resources/js/dom-scripting/index.js":
+/*!*********************************************!*\
+  !*** ./resources/js/dom-scripting/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./pages/admin-dashboard */ "./resources/js/dom-scripting/pages/admin-dashboard.js");
+
+/***/ }),
+
+/***/ "./resources/js/dom-scripting/pages/admin-dashboard.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/dom-scripting/pages/admin-dashboard.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($) {
+  $('.toggle-sidebar').on('click', function () {
+    $('.admin-pages').toggleClass('sidebar-opened');
+  });
+})(jQuery);
 
 /***/ }),
 

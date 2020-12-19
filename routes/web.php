@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +34,8 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
+
+require base_path('routes/admin.php');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 

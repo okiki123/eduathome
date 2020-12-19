@@ -17,3 +17,5 @@ require('./libs');
 require('./components/Example');
 
 require('./components');
+
+require('./dom-scripting');

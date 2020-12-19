@@ -23,11 +23,13 @@
 @include('partials.shared.toastr')
 
 <div id="app" class="d-flex justify-content-between flex-column auth-pages">
-    @include('partials.shared.navbar')
+    <div>
+        @include('partials.shared.navbar')
 
-    <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-4">
-        @yield('content');
-    </main>
+        <main class="d-flex justify-content-center align-items-center mt-4">
+            @yield('content');
+        </main>
+    </div>
 
     @include('partials.shared.footer')
 </div>

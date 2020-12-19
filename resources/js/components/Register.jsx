@@ -25,11 +25,12 @@ export default class Register extends Component {
         return (
             <Fragment>
                 <div className="container register">
-                    <h3 className="mb-4 text-center font-w600">Register</h3>
+                    <h3 className="mb-2 text-center font-w600">Welcome</h3>
+                    <p className="mb-4 font-size-lg text-center">Create your account today</p>
 
                     {
                         this.state.page === 1 &&
-                        <div className="row">
+                        <div className="row mt-4">
                             <div className="col-xl-4 col-md-5 offset-xl-2 offset-md-1 mb-3">
                                 {/*Caregiver Prompt card*/}
                                 <div
@@ -67,17 +68,19 @@ export default class Register extends Component {
                     {
                         this.state.page === 2 &&
                         <div className="auth-card  mx-auto">
-                            <div className="mb-3 d-flex justify-content-between">
+                            <div className="d-flex justify-content-between">
                                 <a className="auth-link cursor-pointer" onClick={this.handlePrev}>
                                     <i className="fas fa-long-arrow-alt-left mr-2"></i>
                                     Back
                                 </a>
-                                <a href={loginRoute} className="auth-link">
+                            </div>
+                            <div className="p-3">
+                                <RegisterForm action={route} token={token} data={data} />
+                            </div>
+                            <div className="mt-2 px-3 mb-5">
+                                Have an account? <a href={loginRoute} className="auth-link">
                                     Login
                                 </a>
-                            </div>
-                            <div className="shadow p-3">
-                                <RegisterForm action={route} token={token} data={data} />
                             </div>
                         </div>
                     }

@@ -5,6 +5,7 @@ return [
         'register',
         'login',
         'verification.notice',
-        'verification.verify'
+        'verification.verify',
+        'admin.login'
     ]
 ];

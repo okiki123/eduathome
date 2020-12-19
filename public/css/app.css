@@ -11443,6 +11443,8 @@ body {
 
 .form-control {
   border-radius: 4px !important;
+  box-shadow: 0 0 0 1px #e9ecef !important;
+  border-color: #e9ecef;
 }
 
 .form-control:focus {
@@ -11451,6 +11453,11 @@ body {
 }
 
 .css-1pahdxg-control {
+  box-shadow: 0 0 0 1px #e9ecef !important;
+  border-color: #e9ecef !important;
+}
+
+.css-yk16xz-control {
   box-shadow: 0 0 0 1px #e9ecef !important;
   border-color: #e9ecef !important;
 }
@@ -11788,5 +11795,96 @@ body {
   font-weight: 400;
   line-height: 28px;
   border-bottom: 1px solid #e4e7ed;
+}
+
+.admin-pages {
+  background-color: #f0f2f5;
+  min-height: 100%;
+  position: relative;
+}
+
+.admin-pages .sidebar {
+  background-color: #f0f2f5;
+  min-height: 100%;
+  width: 0;
+  left: 0;
+  position: absolute;
+  overflow-x: hidden;
+  transition: all 0.3s;
+  z-index: 3;
+}
+
+@media (min-width: 1200px) {
+  .admin-pages .sidebar {
+    width: 250px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .admin-pages .sidebar {
+    width: 50px;
+  }
+}
+
+.admin-pages .sidebar .sidebarAdminDropdown {
+  width: 210px;
+}
+
+.admin-pages .sidebar .admin-action {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .admin-pages .sidebar .admin-action {
+    display: block;
+  }
+}
+
+.admin-pages .sidebar .list-group a {
+  width: 250px;
+  padding: 5px 20px;
+  border: none;
+}
+
+.admin-pages .sidebar .list-group a.active {
+  color: #aba104;
+}
+
+.admin-pages .main-nav {
+  min-height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+@media (min-width: 1200px) {
+  .admin-pages .main-nav {
+    left: 262px;
+    width: calc(100% - 262px);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .admin-pages .main-nav {
+    left: 62px;
+    width: calc(100% - 62px);
+  }
+}
+
+.admin-pages.sidebar-opened .sidebar {
+  width: 250px;
+  left: 0;
+  box-shadow: 0.125rem 0 0.25rem -2px rgba(0, 0, 0, 0.075);
+}
+
+.admin-pages.sidebar-opened .sidebar .admin-action {
+  display: block;
+}
+
+.admin-pages.sidebar-opened .main-nav {
+  left: 62px;
+  position: absolute;
+  width: calc(100% - 62px);
 }
 

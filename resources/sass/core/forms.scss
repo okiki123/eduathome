@@ -1,15 +1,22 @@
 .form-control {
     border-radius: 4px $im;
+    box-shadow: 0 0 0 1px $input-color $im;
+    border-color: $input-color;
 
     &:focus {
-      box-shadow: 0 0 0 1px $input-hover-color $im;
-      border-color: $input-hover-color;
+      box-shadow: 0 0 0 1px $input-color $im;
+      border-color: $input-color;
     }
 }
 
 .css-1pahdxg-control {
-    box-shadow: 0 0 0 1px $input-hover-color $im;
-    border-color: $input-hover-color $im;
+    box-shadow: 0 0 0 1px $input-color $im;
+    border-color: $input-color $im;
+}
+
+.css-yk16xz-control {
+    box-shadow: 0 0 0 1px $input-color $im;
+    border-color: $input-color $im;
 }
 
 .css-g1d714-ValueContainer {
