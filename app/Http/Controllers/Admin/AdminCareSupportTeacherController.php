@@ -23,7 +23,7 @@ class AdminCareSupportTeacherController extends Controller
 
     public function show($id)
     {
-        $user = User::where(['caregivers.id' => $id])->with(['caregiver.city', 'caregiver.state'])->first();
+        $user = User::where(['id' => $id])->with(['caregiver.city', 'caregiver.state'])->first();
 
         if (!$user || !$user['caregiver']) {
             return $this->returnError('Care support teacher does not exist');
