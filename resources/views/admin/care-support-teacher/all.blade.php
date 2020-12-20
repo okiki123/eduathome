@@ -10,7 +10,7 @@ $header = [
             'label' => 'Home'
         ],
         [
-            'route' => route('admin.care-support-teachers'),
+            'route' => '',
             'label' => 'Care Support Teachers'
         ],
     ]
@@ -20,7 +20,18 @@ $header = [
 @extends('layouts.admin')
 
 @section('content')
-    <div>
-        Hello
+    <div class="bg-white p-3 mt-3">
+        {{ $table }}
     </div>
+
+    @include('partials.shared.confirm-modal', [
+        'id' => 'approve-care-support-teacher',
+        'url' => '',
+        'title' => 'Approve Care Support Teacher',
+        'content' => 'Are you sure you want to approve this care support teacher',
+        'saveBtnText' => 'Approve',
+        'attributes' => [
+            'status'
+        ]
+    ])
 @endsection

@@ -18,6 +18,10 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/', 'Admin\AdminIndexController@index')->name('admin.index');
 
+        Route::get('/care-support-teacher/{id}', 'Admin\AdminCareSupportTeacherController@show')->name('admin.care-support-teachers.show');
+
+        Route::put('/care-support-teacher/status/{id}', 'Admin\AdminCareSupportTeacherController@updateStatus')->name('admin.care-support-teachers.update-status');
+
         Route::get('/care-support-teacher', 'Admin\AdminCareSupportTeacherController@index')->name('admin.care-support-teachers');
 
     });

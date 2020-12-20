@@ -2,6 +2,7 @@
     background-color: $dashboard-background;
     min-height: 100%;
     position: relative;
+    overflow-y: scroll;
 
     .sidebar {
         background-color: $dashboard-background;
@@ -11,7 +12,7 @@
         position: absolute;
         overflow-x: hidden;
         transition: all 0.3s;
-        z-index: 3;
+        z-index: 9;
 
         @include media-breakpoint-up(xl) {
             width: 250px;
@@ -64,6 +65,15 @@
         }
     }
 
+    .backdrop {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 8;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
 }
 
 
@@ -82,6 +92,10 @@
         left: 62px;
         position: absolute;
         width: calc(100% - 62px);
+    }
+
+    .backdrop {
+        display: block;
     }
 
 }

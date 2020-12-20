@@ -77795,6 +77795,40 @@ if (document.getElementById('toastr-notification')) {
 
 /***/ }),
 
+/***/ "./resources/js/dom-scripting/components/modal.js":
+/*!********************************************************!*\
+  !*** ./resources/js/dom-scripting/components/modal.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($) {
+  var tableAction = $('.table-action'),
+      actionForm = $('.action-form'),
+      actionModal = $('.action-modal'),
+      field = actionModal.find('[data-attribute]');
+  tableAction.on('click', function () {
+    var that = $(this);
+    field.each(function () {
+      var attribute = $(this).data('attribute');
+      var tagName = $(this).prop('tagName');
+
+      if (tagName === 'INPUT') {
+        $("[data-attribute=".concat(attribute, "]")).val(that.data(attribute));
+      } else if (tagName === 'P') {
+        $("[data-attribute=".concat(attribute, "]")).text(that.data(attribute));
+      } else if (tagName === 'IMG') {
+        $("[data-attribute=".concat(attribute, "]")).attr('src', that.data(attribute));
+      } else if (tagName === "A") {
+        $("[data-attribute=".concat(attribute, "]")).attr('href', that.data(attribute));
+      }
+    });
+    actionForm.attr('action', $(this).data('url'));
+  });
+})(jQuery);
+
+/***/ }),
+
 /***/ "./resources/js/dom-scripting/index.js":
 /*!*********************************************!*\
   !*** ./resources/js/dom-scripting/index.js ***!
@@ -77803,6 +77837,8 @@ if (document.getElementById('toastr-notification')) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./pages/admin-dashboard */ "./resources/js/dom-scripting/pages/admin-dashboard.js");
+
+__webpack_require__(/*! ./components/modal */ "./resources/js/dom-scripting/components/modal.js");
 
 /***/ }),
 

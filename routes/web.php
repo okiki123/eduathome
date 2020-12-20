@@ -37,19 +37,23 @@ Auth::routes(['verify' => true]);
 
 require base_path('routes/admin.php');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
-
-    Route::get('/', 'DashboardController@index')->name('dashboard.index');
+Route::group(['prefix' => 'dashboard'], function () {
 
     Route::get('/profile/{id}', 'CareSupportTeacherController@profile')->name('dashboard.profile');
 
-    Route::get('/settings', 'UserSettingsController@index')->name('dashboard.settings');
+    Route::group(['middleware' => 'auth'], function () {
 
-    Route::put('/basic-details', 'UserSettingsController@updateBasicDetails')->name('dashboard.update.basic-details');
+        Route::get('/', 'DashboardController@index')->name('dashboard.index');
 
-    Route::put('/contact-details', 'UserSettingsController@updateContactDetails')->name('dashboard.update.contact-details');
+        Route::get('/settings', 'UserSettingsController@index')->name('dashboard.settings');
 
-    Route::put('/bio-resume', 'UserSettingsController@updateBioAndResume')->name('dashboard.update.bio-resume');
+        Route::put('/basic-details', 'UserSettingsController@updateBasicDetails')->name('dashboard.update.basic-details');
 
-    Route::put('/password', 'UserSettingsController@updatePassword')->name('dashboard.update.password');
+        Route::put('/contact-details', 'UserSettingsController@updateContactDetails')->name('dashboard.update.contact-details');
+
+        Route::put('/bio-resume', 'UserSettingsController@updateBioAndResume')->name('dashboard.update.bio-resume');
+
+        Route::put('/password', 'UserSettingsController@updatePassword')->name('dashboard.update.password');
+
+    });
 });

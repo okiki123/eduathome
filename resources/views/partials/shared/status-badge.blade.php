@@ -1,10 +1,9 @@
 <?php
-    $classes = [
-        'approved' => 'badge-success',
-        'unapproved' => 'badge-warning',
-        'inactive' => 'badge-secondary',
-        'suspended' => 'badge-danger'
-    ];
+
+use App\Tables\BaseTable;
+
+$classes = BaseTable::$classes;
+
 ?>
 
 <span class="badge badge-pill {{$classes[$status]}}">{{ucfirst($status)}}</span>

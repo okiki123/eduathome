@@ -8,7 +8,7 @@ $authRoutes = config('custom.auth_routes');
 
 @if(in_array($route, $authRoutes))
 
-    <nav class="navbar navbar-expand-md navbar-light bg-transparent mb-5">
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent mb-4">
         <div class="container d-flex justify-content-center">
             <a class="navbar-brand" href="{{ url('/') }}">
                 @include('partials.shared.logo')

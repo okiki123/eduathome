@@ -31,7 +31,7 @@
     @include('partials.admin.sidebar')
 
     <div class="main-nav">
-        <div class="container">
+        <div class="px-3">
 
             <!-- Nav -->
             <div class="py-20 px-3 d-flex justify-content-between justify-content-xl-end align-items-center">
@@ -67,6 +67,8 @@
 
         </div>
     </div>
+
+    <div class="backdrop"></div>
 </div>
 </body>
 </html>
