@@ -59,7 +59,7 @@
             </div>
 
             <!-- Header -->
-            @include('partials.admin.header', compact($header))
+            @include('partials.admin.header', ['header' => $header])
 
             <main>
                 @yield('content')
