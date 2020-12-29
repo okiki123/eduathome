@@ -2,15 +2,16 @@
 
 namespace App\Tables;
 
+use App\Constants\Status;
 use Okipa\LaravelTable\Table;
 
 abstract class BaseTable
 {
     public static $classes = [
-        'approved' => 'badge-success',
-        'unapproved' => 'badge-warning',
-        'inactive' => 'badge-secondary',
-        'suspended' => 'badge-danger'
+        Status::APPROVED => 'badge-success',
+        Status::UNAPPROVED => 'badge-warning',
+        Status::INACTIVE => 'badge-secondary',
+        Status::SUSPENDED => 'badge-danger'
     ];
 
     public static $boolean = [

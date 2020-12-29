@@ -58,6 +58,16 @@ class User extends Authenticatable
         return $this->hasOne(Caregiver::class);
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    public function unreadNotifications()
+    {
+        return $this->hasMany(Notification::class)->where('read_at', '=', null);
+    }
+
     public function validatePassword($password)
     {
         return Hash::check($password, $this->password);

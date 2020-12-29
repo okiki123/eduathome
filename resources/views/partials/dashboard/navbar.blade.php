@@ -58,14 +58,22 @@
                 <button class="btn text-white nm-size bg-transparent" type="button" id="notificationOptions"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Notifications">
                     <span class="iconify font-size-xl" data-icon="clarity:notification-line" data-inline="false"></span>
-                    <span class="badge bg-secondary">5</span>
+                    @if(count(auth()->user()->unreadNotifications))
+                        <span class="badge bg-secondary"> {{ count(auth()->user()->unreadNotifications) }} </span>
+                    @endif
                 </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-notification" aria-labelledby="notificationOptions">
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-notification notifications-dropdown" aria-labelledby="notificationOptions">
                     <a class="dropdown-item disabled font-size-nm text-center py-10 font-w600 text-uppercase">Notifications</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item d-flex font-size-nm" href="#">
-                        Notification 1
-                    </a>
+
+                    @forelse(auth()->user()->unreadNotifications as $notification)
+                        <a class="dropdown-item d-flex justify-content-between font-size-nm"
+                           href="{{ json_decode($notification->data)->url . '?notification=' . $notification->id }}">
+                            {{ json_decode($notification->data)->message }}
+                        </a>
+                    @empty
+                        <span class="dropdown-item font-size-nm disabled">You dont have any unread notifications</span>
+                    @endforelse
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-center font-size-nm" href="#">
                         <i class="fas fa-flag"></i> &nbsp;

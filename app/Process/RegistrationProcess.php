@@ -2,7 +2,9 @@
 
 namespace App\Process;
 
-use App\Mail\Registration;
+use App\Events\TutorCreatedEvent;
+use App\Listeners\SendTutorCreatedEmail;
+use App\Mail\TutorCreated;
 use App\Models\Caregiver;
 use App\Models\User;
 use App\Models\VerificationToken;
@@ -27,30 +29,12 @@ class RegistrationProcess extends BaseProcess
     {
         $this->data['password'] = Hash::make($this->data['password']);
 
-        User::create($this->data);
+        $user = User::create($this->data);
 
-        $userId = DB::getPdo()->lastInsertId();
+        Caregiver::create(['user_id' => $user->id]);
 
-        Caregiver::create(['user_id' => $userId]);
+        TutorCreatedEvent::dispatch($user);
 
-        self::sendVerifyEmail($userId, request('email'), request('firstname'));
-
-        return $userId;
-    }
-
-    public static function sendVerifyEmail($userId, $userEmail, $userFirstname)
-    {
-        $now = Carbon::now()->toDateTimeString();
-
-        $expiresAt = Carbon::now()->addHour()->toDateTimeString(); // Expires in an hour
-
-        $token = md5($expiresAt);
-
-        VerificationToken::create(['user_id' => $userId, 'token' => $token, 'expires_at' => $expiresAt, 'created_at' => $now]);
-
-        $verificationLink = route('verification.verify', ['id' => $userId, 'hash' => $token]);
-
-        Mail::to($userEmail)
-            ->send(new Registration($userFirstname, $verificationLink));
+        return $user->id;
     }
 }

@@ -52,4 +52,12 @@
             background-color: $dashboard-nav-light $im;
         }
     }
+
+    .notifications-dropdown {
+        width: 300px;
+
+        .dropdown-item {
+            white-space: normal;
+        }
+    }
 }

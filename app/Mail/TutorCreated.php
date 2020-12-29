@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Registration extends Mailable
+class TutorCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,6 +18,7 @@ class Registration extends Mailable
      * Create a new message instance.
      *
      * @param $firstName
+     * @param $verificationLink
      */
     public function __construct($firstName, $verificationLink)
     {

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Constants\Status;
+use App\Events\TutorApprovedEvent;
 use App\Http\Controllers\Controller;
 use App\Models\Caregiver;
 use App\Models\User;
@@ -46,6 +48,10 @@ class AdminCareSupportTeacherController extends Controller
             }
 
             $caregiver->update($request->only(['status']));
+
+            if ($request->status === Status::APPROVED) {
+                TutorApprovedEvent::dispatch(auth('admin')->user(), $caregiver);
+            }
 
             return $this->returnSuccess('Care support teacher status updated successfully');
 

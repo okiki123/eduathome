@@ -2,6 +2,7 @@
 
 namespace App\Tables;
 
+use App\Constants\Status;
 use App\Models\Caregiver;
 use Illuminate\Database\Eloquent\Builder;
 use Okipa\LaravelTable\Table;
@@ -70,7 +71,7 @@ class CareSupportTeachersTable extends BaseTable
                     'toggle' => 'modal',
                     'target' => '#approve-care-support-teacher',
                     'url'   => route('admin.care-support-teachers.update-status', ['id' => $caregiver->id]),
-                    'status' => 'approved'
+                    'status' => Status::APPROVED
                 ]
             ]
         ];
