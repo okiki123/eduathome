@@ -11,4 +11,5 @@ class PageTitle
     const VERIFIED = 'verified';
     const DASHBOARD_SETTINGS = 'Dashboard - Settings';
     const DASHBOARD = 'Dashboard';
+    const CARE_SUPPORT_TEACHERS = 'Care Support Teachers';
 }

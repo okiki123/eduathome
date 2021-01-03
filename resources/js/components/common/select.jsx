@@ -2,11 +2,11 @@ import React from "react";
 import ReactSelect from "react-select";
 import PropTypes from "prop-types";
 
-const Select = ({ name, label, prompt = 'Select', error, className = '', value, ...rest }) => {
+const Select = ({ name, label, prompt = 'Select', error, className = '', value, addValidation = true, labelClass = '', ...rest }) => {
     return (
         <div className="form-group">
             {
-                label && <label className={`${error ? 'text-danger' : ''}`} htmlFor={name}>{label}</label>
+                label && <label className={`${labelClass} ${error ? 'text-danger' : ''}`} htmlFor={name}>{label}</label>
             }
             <ReactSelect
                    className={`basic-single ${className} ${error ? 'is-invalid' : ''}`}
@@ -19,7 +19,7 @@ const Select = ({ name, label, prompt = 'Select', error, className = '', value, 
                    isRtl={false}
                    {...rest}
             />
-            <input type="hidden" name={name} value={value}/>
+            {addValidation && <input type="hidden" name={name} value={value}/>}
             {
                 error && <small id={`${name}`} className="form-text text-danger">{error}</small>
             }
@@ -32,6 +32,7 @@ Select.propTypes = {
     label: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.any,
+    addValidation: PropTypes.bool,
     className: PropTypes.string,
     prompt: PropTypes.string,
     error: PropTypes.string,

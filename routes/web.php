@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\State;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,10 +28,21 @@ Route::get('/', function () {
         asset('images/success_stories__person3.jpg')
     ];
 
+    $states = State::getStates();
+
     return view('welcome', [
         'customers' => $customers,
-        'caregivers' => $caregivers
+        'caregivers' => $caregivers,
+        'states' => $states
     ]);
+});
+
+Route::group(['prefix' => 'care-support-teachers'], function () {
+
+    Route::get('/', 'CareSupportTeacherController@index')->name('care-support-teachers.index');
+
+    Route::get('/{id}', 'CareSupportTeacherController@profile')->name('care-support-teachers.show');
+
 });
 
 Auth::routes(['verify' => true]);

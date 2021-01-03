@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Listeners\SendTutorCreatedEmail;
 use App\Models\User;
 use App\Process\RegistrationProcess;
 use App\Providers\RouteServiceProvider;
@@ -52,7 +53,7 @@ class LoginController extends Controller
 
         if (!$user->email_verified_at) {
 
-            RegistrationProcess::sendVerifyEmail($user->id, $user->email, $user->firstname);
+            SendTutorCreatedEmail::sendVerifyEmail($user);
 
             $request->session()->put('userId', $user->id);
 

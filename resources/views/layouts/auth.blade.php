@@ -22,7 +22,7 @@
 
 @include('partials.shared.toastr')
 
-<div id="app" class="d-flex justify-content-between flex-column auth-pages">
+<div id="app" class="d-flex justify-content-between flex-column auth-pages {{ \Illuminate\Support\Facades\Request::is('care-support-teachers*') ? 'ash-background' : '' }}">
     <div>
         @include('partials.shared.navbar')
 

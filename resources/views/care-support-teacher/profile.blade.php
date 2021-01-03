@@ -1,15 +1,16 @@
 <?php
 
-use App\Constants\PageTitle;
-
 $title = $user->fullname();
+
+$additionalClasses = auth()->user() == $user ? '' : 'tutors-page';
 
 ?>
 
-@extends('layouts.dashboard')
+@extends(auth()->user() == $user ? 'layouts.dashboard' : 'layouts.auth')
+
 
 @section('content')
-    <div class="container">
+    <div class="container {{ $additionalClasses }}">
         @include('partials.shared.profile')
     </div>
 @endsection

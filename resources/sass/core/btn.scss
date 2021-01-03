@@ -46,4 +46,21 @@
     &-standard {
         min-width: 7.7em;
     }
+
+    &-outline {
+
+        &-primary {
+            background-color: transparent;
+            border: solid 1px $primary-green;
+            color: $primary-green;
+
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                border: solid 1px $primary-green;
+                color: $primary-green;
+                opacity: 0.9;
+            }
+        }
+
+    }
 }

@@ -1,6 +1,10 @@
 .auth-pages {
     min-height: 100vh;
 
+    &.ash-background {
+        background-color: $dashboard-background;
+    }
+
     .register {
         .auth-card {
             width: 400px;

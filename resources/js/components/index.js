@@ -7,6 +7,8 @@ import BasicDetailsForm from "./forms/basic-details-form";
 import SettingsPasswordForm from "./forms/settings-password-form";
 import Toastr from "./common/toastr";
 import BioResumeForm from "./forms/bio-resume-form";
+import BannerSearchForm from "./forms/banner-search-form";
+import FilterTutorForm from "./forms/filter-tutor-form";
 
 let token;
 
@@ -68,4 +70,18 @@ if (document.getElementById('toastr-notification')) {
     const element = document.getElementById('toastr-notification');
     const props = JSON.parse(element.dataset.props);
     ReactDOM.render(<Toastr {...props} />, element);
+}
+
+// Banner Search Form
+if (document.getElementById('banner-search')) {
+    const element = document.getElementById('banner-search');
+    const props = JSON.parse(element.dataset.props);
+    ReactDOM.render(<BannerSearchForm {...props} />, element);
+}
+
+// Banner Tutor Form
+if (document.getElementById('filter-tutor')) {
+    const element = document.getElementById('filter-tutor');
+    const props = JSON.parse(element.dataset.props);
+    ReactDOM.render(<FilterTutorForm {...props} />, element);
 }

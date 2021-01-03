@@ -50,20 +50,38 @@
                 }
 
                 .form-control {
-                    width: 300px;
+                    //width: 300px;
                     height: 50px;
 
                     @include media-breakpoint-between(md, lg) {
-                        width: 270px;
+                        //width: 270px;
                     }
                 }
 
-                button {
-                    min-width: 150px;
-                    @include media-breakpoint-between(md, lg) {
-                        width: 120px;
+                .form-search {
+                    width: 100%;
+                    color: $body-color $im;
+                    text-align: left $im;
+
+                    @include media-breakpoint-between(sm, lg) {
+                        width: 75%;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        width: 50%;
+                    }
+
+                    .css-yk16xz-control { // Search bar on banner
+                        height: 55px;
                     }
                 }
+
+                //button {
+                //    min-width: 150px;
+                //    @include media-breakpoint-between(md, lg) {
+                //        width: 120px;
+                //    }
+                //}
             }
         }
     }

@@ -11139,6 +11139,222 @@ body {
   font-family: "Mallanna", sans-serif !important;
 }
 
+.bg-primary {
+  background-color: #1b5954 !important;
+}
+
+.bg-secondary {
+  background-color: #aba104 !important;
+}
+
+.border-main {
+  border: solid 1px #dbe2e8;
+}
+
+.border-main-left {
+  border-left: solid 1px #dbe2e8;
+}
+
+.border-main-right {
+  border-right: solid 1px #dbe2e8;
+}
+
+.border-main-top {
+  border-top: solid 1px #dbe2e8;
+}
+
+.border-main-bottom {
+  border-bottom: solid 1px #dbe2e8;
+}
+
+.border-danger {
+  border: solid 1px #dc3545;
+}
+
+.border-success {
+  border: solid 1px #28a745;
+}
+
+.border-none {
+  border: none !important;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background-color: #1b5954;
+  border-color: #1b5954;
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #1b5954 !important;
+  border-color: #1b5954 !important;
+  opacity: 0.9;
+}
+
+.btn-primary:disabled {
+  border-color: #dbe2e8;
+  background-color: #dbe2e8;
+  color: #1b5954;
+  cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover {
+  border-color: #dbe2e8 !important;
+  background-color: #dbe2e8 !important;
+  color: #1b5954;
+}
+
+.btn-secondary {
+  background-color: #aba104;
+  border-color: #aba104;
+  color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: #aba104 !important;
+  border-color: #aba104 !important;
+  opacity: 0.9;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.btn-standard {
+  min-width: 7.7em;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: solid 1px #1b5954;
+  color: #1b5954;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: transparent;
+  border: solid 1px #1b5954;
+  color: #1b5954;
+  opacity: 0.9;
+}
+
+.font-w100 {
+  font-weight: 100 !important;
+}
+
+.font-w200 {
+  font-weight: 200 !important;
+}
+
+.font-w300 {
+  font-weight: 300 !important;
+}
+
+.font-w400 {
+  font-weight: 400 !important;
+}
+
+.font-w500 {
+  font-weight: 500 !important;
+}
+
+.font-w600 {
+  font-weight: 600 !important;
+}
+
+.font-w700 {
+  font-weight: 700 !important;
+}
+
+.font-w800 {
+  font-weight: 800 !important;
+}
+
+.font-w900 {
+  font-weight: 900 !important;
+}
+
+.font-size-xxs {
+  font-size: 8px !important;
+}
+
+.font-size-xs {
+  font-size: 10px !important;
+}
+
+.font-size-sm {
+  font-size: 12px !important;
+}
+
+.font-size-nm {
+  font-size: 14px !important;
+}
+
+.font-size-md {
+  font-size: 16px !important;
+}
+
+.font-size-lg {
+  font-size: 20px !important;
+}
+
+.font-size-xl {
+  font-size: 24px !important;
+}
+
+.font-size-xxl {
+  font-size: 30px !important;
+}
+
+.font-size-xxxl {
+  font-size: 34px !important;
+}
+
+.font-size-xxxxl {
+  font-size: 46px !important;
+}
+
+.form-control {
+  border-radius: 4px !important;
+  box-shadow: 0 0 0 1px #e9ecef !important;
+  border-color: #e9ecef;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 1px #e9ecef !important;
+  border-color: #e9ecef;
+}
+
+.css-1pahdxg-control {
+  box-shadow: 0 0 0 1px #e9ecef !important;
+  border-color: #e9ecef !important;
+}
+
+.css-yk16xz-control {
+  box-shadow: 0 0 0 1px #e9ecef !important;
+  border-color: #e9ecef !important;
+}
+
+.css-g1d714-ValueContainer {
+  height: calc(1.5em + 0.75rem + 2px);
+}
+
+.is-invalid .css-yk16xz-control,
+.is-invalid .css-1pahdxg-control {
+  border-color: #dc3545 !important;
+  box-shadow: none !important;
+}
+
 body {
   height: 100vh;
 }
@@ -11295,150 +11511,14 @@ body {
   min-width: 200px;
 }
 
-.text-primary {
-  color: #1b5954 !important;
+.paginations .page-item .page-link {
+  color: #1b5954;
 }
 
-.text-secondary {
-  color: #aba104 !important;
-}
-
-.bg-primary {
-  background-color: #1b5954 !important;
-}
-
-.bg-secondary {
-  background-color: #aba104 !important;
-}
-
-.font-w100 {
-  font-weight: 100 !important;
-}
-
-.font-w200 {
-  font-weight: 200 !important;
-}
-
-.font-w300 {
-  font-weight: 300 !important;
-}
-
-.font-w400 {
-  font-weight: 400 !important;
-}
-
-.font-w500 {
-  font-weight: 500 !important;
-}
-
-.font-w600 {
-  font-weight: 600 !important;
-}
-
-.font-w700 {
-  font-weight: 700 !important;
-}
-
-.font-w800 {
-  font-weight: 800 !important;
-}
-
-.font-w900 {
-  font-weight: 900 !important;
-}
-
-.font-size-xxs {
-  font-size: 8px !important;
-}
-
-.font-size-xs {
-  font-size: 10px !important;
-}
-
-.font-size-sm {
-  font-size: 12px !important;
-}
-
-.font-size-nm {
-  font-size: 14px !important;
-}
-
-.font-size-md {
-  font-size: 16px !important;
-}
-
-.font-size-lg {
-  font-size: 20px !important;
-}
-
-.font-size-xl {
-  font-size: 24px !important;
-}
-
-.font-size-xxl {
-  font-size: 30px !important;
-}
-
-.font-size-xxxl {
-  font-size: 34px !important;
-}
-
-.font-size-xxxxl {
-  font-size: 46px !important;
-}
-
-.btn:hover,
-.btn:focus,
-.btn:active {
-  outline: none;
-  box-shadow: none !important;
-}
-
-.btn-primary {
+.paginations .page-item.active .page-link {
   background-color: #1b5954;
   border-color: #1b5954;
   color: white;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  background-color: #1b5954 !important;
-  border-color: #1b5954 !important;
-  opacity: 0.9;
-}
-
-.btn-primary:disabled {
-  border-color: #dbe2e8;
-  background-color: #dbe2e8;
-  color: #1b5954;
-  cursor: not-allowed;
-}
-
-.btn-primary:disabled:hover {
-  border-color: #dbe2e8 !important;
-  background-color: #dbe2e8 !important;
-  color: #1b5954;
-}
-
-.btn-secondary {
-  background-color: #aba104;
-  border-color: #aba104;
-  color: white;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus,
-.btn-secondary:active {
-  background-color: #aba104 !important;
-  border-color: #aba104 !important;
-  opacity: 0.9;
-  outline: none;
-  box-shadow: none !important;
-}
-
-.btn-standard {
-  min-width: 7.7em;
 }
 
 table th a {
@@ -11451,35 +11531,12 @@ table th a:hover {
   color: #575757;
 }
 
-.form-control {
-  border-radius: 4px !important;
-  box-shadow: 0 0 0 1px #e9ecef !important;
-  border-color: #e9ecef;
+.text-primary {
+  color: #1b5954 !important;
 }
 
-.form-control:focus {
-  box-shadow: 0 0 0 1px #e9ecef !important;
-  border-color: #e9ecef;
-}
-
-.css-1pahdxg-control {
-  box-shadow: 0 0 0 1px #e9ecef !important;
-  border-color: #e9ecef !important;
-}
-
-.css-yk16xz-control {
-  box-shadow: 0 0 0 1px #e9ecef !important;
-  border-color: #e9ecef !important;
-}
-
-.css-g1d714-ValueContainer {
-  height: calc(1.5em + 0.75rem + 2px);
-}
-
-.is-invalid .css-yk16xz-control,
-.is-invalid .css-1pahdxg-control {
-  border-color: #dc3545 !important;
-  box-shadow: none !important;
+.text-secondary {
+  color: #aba104 !important;
 }
 
 .main-nav a.nav-link,
@@ -11491,6 +11548,10 @@ table th a:hover {
   font-size: 1rem;
   font-weight: bold;
   transition: all 0.2s;
+}
+
+.main-nav .nav-item .nav-link.active {
+  color: #aba104 !important;
 }
 
 @media (min-width: 992px) {
@@ -11691,24 +11752,29 @@ table th a:hover {
 }
 
 .landing-page .banner-section .banner .search-area .form-control {
-  width: 300px;
   height: 50px;
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  .landing-page .banner-section .banner .search-area .form-control {
-    width: 270px;
+.landing-page .banner-section .banner .search-area .form-search {
+  width: 100%;
+  color: #575757 !important;
+  text-align: left !important;
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .landing-page .banner-section .banner .search-area .form-search {
+    width: 75%;
   }
 }
 
-.landing-page .banner-section .banner .search-area button {
-  min-width: 150px;
+@media (min-width: 1200px) {
+  .landing-page .banner-section .banner .search-area .form-search {
+    width: 50%;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  .landing-page .banner-section .banner .search-area button {
-    width: 120px;
-  }
+.landing-page .banner-section .banner .search-area .form-search .css-yk16xz-control {
+  height: 55px;
 }
 
 .landing-page .how-it-works__img {
@@ -11769,6 +11835,10 @@ table th a:hover {
 
 .auth-pages {
   min-height: 100vh;
+}
+
+.auth-pages.ash-background {
+  background-color: #f0f2f5;
 }
 
 .auth-pages .register .auth-card {
@@ -11918,5 +11988,9 @@ table th a:hover {
 
 .admin-pages.sidebar-opened .backdrop {
   display: block;
+}
+
+.tutors-page {
+  padding-top: 7rem;
 }
 

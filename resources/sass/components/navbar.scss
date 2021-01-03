@@ -9,6 +9,10 @@
             font-weight: bold;
             transition: all 0.2s;
 
+            &.active {
+                color: $secondary-lemon $im;
+            }
+
             @include media-breakpoint-up(lg) {
                 padding: 1.3em 1em $im;
             }

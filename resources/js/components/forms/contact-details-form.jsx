@@ -57,21 +57,24 @@ export default class ContactDetailsForm extends BaseForm {
     };
 
     fetchCities = async (stateId) => {
-        try {
-            let cities = await http.get(`/api/cities?state_id=${stateId}`);
-            cities = processOptions(cities.data, 'city');
-            this.setState({cities});
-        } catch (e) {
-            toastr.error('unable to fetch cities');
+        if (!!stateId) {
+            try {
+                let cities = await http.get(`/api/cities?state_id=${stateId}`);
+                cities = processOptions(cities.data, 'city');
+                this.setState({cities});
+            } catch (e) {
+                toastr.error('unable to fetch cities');
+            }
         }
     }
 
     render() {
-        const {fields: {city, street1, street2, state}, cities} = this.state;
-        let {route, token, states, caregiver} = this.props;
+        let {fields: {city, street1, street2, state}, cities} = this.state;
+        let {route, token, states} = this.props;
         let caregiverState = getOption(states, state.value);
         let caregiverCity = getOption(cities, city.value);
         states = processOptions(states, 'state');
+        cities = processOptions(cities, 'city');
 
         return (
             <Fragment>
