@@ -76,7 +76,7 @@ $tutors = [
                                             </div>
                                             <div class="flex-grow-1 d-sm-flex justify-content-between">
                                                 <div class="order-sm-2 text-center mb-2 mb-sm-0">
-                                                    <a class="btn btn-outline-primary btn-sm" href="{{ route('care-support-teachers.show', ['id' => $tutor->user->id]) }}">
+                                                    <a class="btn btn-outline-primary btn-sm w-90px" href="{{ route('care-support-teachers.show', ['id' => $tutor->user->id]) }}">
                                                         View Profile
                                                     </a>
                                                 </div>

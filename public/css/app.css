@@ -11511,6 +11511,10 @@ body {
   min-width: 200px;
 }
 
+.w-90px {
+  width: 90px;
+}
+
 .paginations .page-item .page-link {
   color: #1b5954;
 }
