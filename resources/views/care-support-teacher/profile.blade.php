@@ -2,11 +2,11 @@
 
 $title = $user->fullname();
 
-$additionalClasses = auth()->user() == $user ? '' : 'tutors-page';
+$additionalClasses = auth()->user() && auth()->user()->email == $user->email ? '' : 'tutors-page';
 
 ?>
 
-@extends(auth()->user() == $user ? 'layouts.dashboard' : 'layouts.auth')
+@extends(auth()->user() && auth()->user()->email == $user->email ? 'layouts.dashboard' : 'layouts.auth')
 
 
 @section('content')

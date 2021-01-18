@@ -1,0 +1,9 @@
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+    adaptiveHeight:true,
+    autoHover:true,
+    minSlides:1,
+    maxSlides:1,
+    moveSlides:1
+  });
+});

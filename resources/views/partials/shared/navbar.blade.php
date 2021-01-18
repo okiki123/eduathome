@@ -22,9 +22,14 @@ $addClasses = Request::is('care-support-teachers*') ? 'border-main-bottom bg-whi
     </nav>
 
 @else
-
+    <div class="text-center covid-notice py-2">
+        <h5 class="text-white">
+            We follow CDC Guidelines for Covid-19
+            <a class="btn btn-light btn-standard ml-3" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">More Information</a>
+        </h5>
+    </div>
     <nav
-        class="navbar navbar-expand-lg fixed-top bg-white navbar-light main-nav {{$addClasses}}">
+        class="navbar navbar-home navbar-expand-lg bg-white navbar-light main-nav {{$addClasses}}">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 @include('partials.shared.logo')

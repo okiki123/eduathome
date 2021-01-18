@@ -1,5 +1,9 @@
 .landing-page {
 
+    .covid-notice {
+        background-color: #e54343;
+    }
+
     .section {
         min-height: $section-height;
 
@@ -21,6 +25,7 @@
             }
         }
     }
+
     .banner-section {
         min-height: 100vh;
 
@@ -86,6 +91,13 @@
         }
     }
 
+    .video-section {
+        .video {
+            width: 100%;
+            max-height: 80vh;
+        }
+    }
+
     .how-it-works {
         &__img {
             width: 230px;
@@ -127,6 +139,8 @@
     }
 
     .success-stories {
+        min-height: 50vh;
+
         .card {
             box-shadow: 0 1px 10px 0 rgba(0,0,0,0.1), 0 6px 15px 0 rgba(0,0,0,0.1);
 

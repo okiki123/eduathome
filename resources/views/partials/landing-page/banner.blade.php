@@ -5,7 +5,7 @@
         <div class="text-white search-area w-100">
             <div class="text text-center">
                 <h2>Welcome to Edu@Home</h2>
-                <p class="search-text">Search and find Caregivers near you</p>
+                <p class="search-text">Search and find Care Support Teachers near you</p>
             </div>
             <div class="form-search text-center mt-4 mx-auto" id="banner-search"
                  data-props="{{ json_encode(['states' => $states, 'action' => route('care-support-teachers.index')]) }}">

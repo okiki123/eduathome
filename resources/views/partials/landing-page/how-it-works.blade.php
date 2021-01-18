@@ -2,9 +2,9 @@
     <div class="container section-contents mt-4">
         <div class="section-header">
             <h2 class="text-center">How it works</h2>
-            <p class="text-center font-size-md text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nulla vitae arcu condimentum posuere.
-                Donec vehicula urna eu lorem interdum sagittis. Suspendisse rhoncus nec neque eu porttitor
+            <p class="text-center font-size-lg text-muted">
+                Edu@Home is an online marketplace that caters to parents needing a specialized
+                tutor that will assist their children during school hours in their home.
             </p>
         </div>
         <div class="section-body">

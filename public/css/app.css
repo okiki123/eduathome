@@ -11365,6 +11365,8 @@ body {
 
 .mxw-1200 {
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mt-10 {
@@ -11568,6 +11570,13 @@ table th a:hover {
   color: #aba104 !important;
 }
 
+.navbar-home {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
 .dashboard-nav {
   background-color: #343a40;
 }
@@ -11591,6 +11600,12 @@ table th a:hover {
 .dashboard-nav .nav-item .nav-link:hover,
 .dashboard-nav .nav-item .nav-link.active {
   background-color: rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-nav .nav-item .nav-link .notification-dot {
+  color: #03a9f4;
+  position: relative;
+  top: -5px;
 }
 
 .dashboard-nav .dropdown-btn {
@@ -11620,7 +11635,6 @@ table th a:hover {
   width: 100%;
   text-align: left;
   padding: 3rem;
-  margin-top: 80px;
 }
 
 .footer-left {
@@ -11702,6 +11716,10 @@ table th a:hover {
   margin-bottom: 5px;
 }
 
+.landing-page .covid-notice {
+  background-color: #e54343;
+}
+
 .landing-page .section {
   min-height: calc(100vh - 81px);
 }
@@ -11781,6 +11799,11 @@ table th a:hover {
   height: 55px;
 }
 
+.landing-page .video-section .video {
+  width: 100%;
+  max-height: 80vh;
+}
+
 .landing-page .how-it-works__img {
   width: 230px;
 }
@@ -11823,6 +11846,10 @@ table th a:hover {
   .landing-page .caregiver-signup h4 {
     font-size: 1rem;
   }
+}
+
+.landing-page .success-stories {
+  min-height: 50vh;
 }
 
 .landing-page .success-stories .card {

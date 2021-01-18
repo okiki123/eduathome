@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\StaticContents;
 use App\Models\State;
 use Illuminate\Support\Facades\Route;
 
@@ -16,24 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $customers = [
-        asset('images/success_stories__person3.jpg'),
-        asset('images/success_stories__person4.jpg'),
-        asset('images/success_stories__person16.jpg')
-    ];
-
-    $caregivers = [
-        asset('images/success_stories__person4.jpg'),
-        asset('images/success_stories__person5.jpg'),
-        asset('images/success_stories__person3.jpg')
-    ];
+    $successStories = StaticContents::$successStories;
 
     $states = State::getStates();
 
     return view('welcome', [
-        'customers' => $customers,
-        'caregivers' => $caregivers,
-        'states' => $states
+        'states' => $states,
+        'successStories' => $successStories
     ]);
 });
 

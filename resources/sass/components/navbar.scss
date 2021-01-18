@@ -24,6 +24,12 @@
     }
 }
 
+.navbar-home {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
 
 .dashboard-nav {
     background-color: $dashboard-nav;
@@ -43,6 +49,12 @@
 
             &:hover, &.active {
                 background-color: $dashboard-nav-light;
+            }
+
+            .notification-dot {
+                color: #03a9f4;
+                position: relative;
+                top: -5px;
             }
         }
     }

@@ -75,10 +75,17 @@ $tutors = [
                                                      width="100" height="100">
                                             </div>
                                             <div class="flex-grow-1 d-sm-flex justify-content-between">
-                                                <div class="order-sm-2 text-center mb-2 mb-sm-0">
-                                                    <a class="btn btn-outline-primary btn-sm w-90px" href="{{ route('care-support-teachers.show', ['id' => $tutor->user->id]) }}">
-                                                        View Profile
-                                                    </a>
+                                                <div class="order-sm-2 d-flex text-center mb-2 mb-sm-0">
+                                                    <div class="mr-2">
+                                                        <a class="btn btn-outline-primary btn-sm w-90px" href="{{ route('care-support-teachers.show', ['id' => $tutor->user->id]) }}">
+                                                            View Profile
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <a class="btn btn-outline-primary btn-sm w-90px" href="{{ route('care-support-teachers.show', ['id' => $tutor->user->id]) }}">
+                                                            Message
+                                                        </a>
+                                                    </div>
                                                 </div>
                                                 <div class="d-flex order-sm-1 flex-column justify-content-between text-center text-sm-left">
                                                     <div class="text-primary font-w600 text-uppercase">

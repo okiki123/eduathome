@@ -72,4 +72,19 @@ class User extends Authenticatable
     {
         return Hash::check($password, $this->password);
     }
+
+    public function messagesSent()
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
+
+    public function messagesReceived()
+    {
+        return $this->hasMany(Message::class, 'user_id');
+    }
+
+    public function messages()
+    {
+        return $this->messagesSent()->union($this->messagesReceived()->toBase());
+    }
 }
