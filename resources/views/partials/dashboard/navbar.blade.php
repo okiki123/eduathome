@@ -17,13 +17,10 @@
                     </a>
                 </li>
                 <li class="nav-item ml-1">
-                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::currentRouteName() === 'dashboard.messages' ? 'active' : '' }}"
-                       href="{{ route('dashboard.messages') }}">
-                        <i class="fas fa-envelope mr-1"></i>
-                        <span>Messages</span>
-                        <span>
-                            <i class="fas fa-circle font-size-xxs notification-dot"></i>
-                        </span>
+                    <a class="nav-link"
+                       href="#">
+                        <i class="fas fa-wallet mr-1"></i>
+                        <span>Earnings</span>
                     </a>
                 </li>
             </ul>
