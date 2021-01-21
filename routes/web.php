@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'App\HomeController@index')->name('home');
 
-Route::get('/about-us', 'HomeController@about')->name('about');
+Route::get('/about-us', 'App\HomeController@about')->name('about');
 
 Route::group(['prefix' => 'care-support-teachers'], function () {
 
-    Route::get('/', 'CareSupportTeacherController@index')->name('care-support-teachers.index');
+    Route::get('/', 'App\CareSupportTeacherController@index')->name('care-support-teachers.index');
 
-    Route::get('/{id}', 'CareSupportTeacherController@profile')->name('care-support-teachers.show');
+    Route::get('/{id}', 'App\CareSupportTeacherController@profile')->name('care-support-teachers.show');
 
 });
 
@@ -31,21 +31,27 @@ require base_path('routes/admin.php');
 
 Route::group(['prefix' => 'dashboard'], function () {
 
-    Route::get('/profile/{id}', 'CareSupportTeacherController@profile')->name('dashboard.profile');
+    Route::get('/profile/{id}', 'App\CareSupportTeacherController@profile')->name('dashboard.profile');
 
     Route::group(['middleware' => 'auth'], function () {
 
-        Route::get('/', 'DashboardController@index')->name('dashboard.index');
+        Route::get('/', 'CareSupportTeacher\DashboardController@index')->name('dashboard.index');
 
-        Route::get('/settings', 'UserSettingsController@index')->name('dashboard.settings');
+        Route::put('/basic-details', 'CareSupportTeacher\SettingsController@updateBasicDetails')->name('dashboard.update.basic-details');
 
-        Route::put('/basic-details', 'UserSettingsController@updateBasicDetails')->name('dashboard.update.basic-details');
+        Route::put('/contact-details', 'CareSupportTeacher\SettingsController@updateContactDetails')->name('dashboard.update.contact-details');
 
-        Route::put('/contact-details', 'UserSettingsController@updateContactDetails')->name('dashboard.update.contact-details');
+        Route::put('/bio-resume', 'CareSupportTeacher\SettingsController@updateBioAndResume')->name('dashboard.update.bio-resume');
 
-        Route::put('/bio-resume', 'UserSettingsController@updateBioAndResume')->name('dashboard.update.bio-resume');
+        Route::put('/password', 'CareSupportTeacher\SettingsController@updatePassword')->name('dashboard.update.password');
 
-        Route::put('/password', 'UserSettingsController@updatePassword')->name('dashboard.update.password');
+        Route::group(['prefix' => 'settings'], function () {
+
+            Route::get('/profile', 'CareSupportTeacher\SettingsController@index')->name('dashboard.settings.profile');
+
+            Route::get('/account', 'CareSupportTeacher\SettingsController@account')->name('dashboard.settings.account');
+
+        });
 
     });
 });

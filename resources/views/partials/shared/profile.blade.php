@@ -23,7 +23,7 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="actionsLink">
-                            <a class="dropdown-item font-size-nm" href="{{route('dashboard.settings')}}">Edit Profile</a>
+                            <a class="dropdown-item font-size-nm" href="{{route('dashboard.settings.profile')}}">Edit Profile</a>
                         </div>
                     </div>
                     </div>

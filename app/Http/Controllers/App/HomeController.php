@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
 use App\Constants\StaticContents;
+use App\Http\Controllers\Controller;
 use App\Models\State;
 
 class HomeController extends Controller

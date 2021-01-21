@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\CareSupportTeacher;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        return view('care-support-teacher.dashboard');
     }
 }

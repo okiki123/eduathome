@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
 use App\Constants\Status;
+use App\Http\Controllers\Controller;
 use App\Models\Caregiver;
 use App\Models\State;
 use App\Models\User;
@@ -35,7 +36,7 @@ class CareSupportTeacherController extends Controller
 
         $careSupportTeachers = $query->paginate(15);
 
-        return view('care-support-teacher.index', [
+        return view('app.care-support-teachers', [
             'careSupportTeachers' => $careSupportTeachers,
             'states' => $states,
             'cities' => $cities,

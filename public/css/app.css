@@ -12039,6 +12039,18 @@ table th a:hover {
   padding-top: 70px;
 }
 
+.dashboard-pages .dashboard-content .settings {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .dashboard-pages .dashboard-content .settings-side {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 125px;
+  }
+}
+
 .dashboard-pages .dashboard-content .settings .form-heading {
   margin-bottom: 20px;
   padding-top: 30px;

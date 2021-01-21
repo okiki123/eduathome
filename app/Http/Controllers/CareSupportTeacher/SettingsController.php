@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\CareSupportTeacher;
 
 use App\Constants\Messages;
+use App\Http\Controllers\Controller;
 use App\Models\State;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class UserSettingsController extends Controller
+class SettingsController extends Controller
 {
     public function index()
     {
@@ -20,11 +21,16 @@ class UserSettingsController extends Controller
             $cities = State::getCities($caregiver->state_id);
         }
 
-        return view('dashboard.settings', [
+        return view('care-support-teacher.settings.profile', [
             'states' => $states,
             'cities' => $cities,
             'caregiver' => $caregiver
         ]);
+    }
+
+    public function account()
+    {
+        return view('care-support-teacher.settings.account');
     }
 
     public function updateBasicDetails(Request $request)

@@ -39,7 +39,7 @@
                         <span class="iconify mr-2" data-icon="simple-line-icons:user" data-inline="false"></span>
                         Profile
                     </a>
-                    <a class="dropdown-item font-size-nm my-2" href="{{ route('dashboard.settings') }}">
+                    <a class="dropdown-item font-size-nm my-2" href="{{ route('dashboard.settings.profile') }}">
                         <span class="iconify mr-2" data-icon="simple-line-icons:wrench" data-inline="false"></span>
                         Settings
                     </a>
