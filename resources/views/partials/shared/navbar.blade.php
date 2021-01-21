@@ -22,12 +22,16 @@ $addClasses = Request::is('care-support-teachers*') ? 'border-main-bottom bg-whi
     </nav>
 
 @else
-    <div class="text-center covid-notice py-2">
-        <h5 class="text-white">
-            We follow CDC Guidelines for Covid-19
-            <a class="btn btn-light btn-standard ml-3" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">More Information</a>
-        </h5>
-    </div>
+
+    @if (Illuminate\Support\Facades\Request::path() === '/')
+        <div class="text-center covid-notice py-2">
+            <h5 class="text-white">
+                We follow CDC Guidelines for Covid-19
+                <a class="btn btn-light btn-standard ml-3" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">More Information</a>
+            </h5>
+        </div>
+    @endif
+
     <nav
         class="navbar navbar-home navbar-expand-lg bg-white navbar-light main-nav {{$addClasses}}">
         <div class="container-fluid">
@@ -41,10 +45,19 @@ $addClasses = Request::is('care-support-teachers*') ? 'border-main-bottom bg-whi
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ $route === 'care-support-teachers.index' ? 'active' : '' }}" href="{{ route('care-support-teachers.index') }}">Find Caregiver</a>
+                        <a
+                            class="nav-link {{ $route === 'care-support-teachers.index' ? 'active' : '' }}"
+                            href="{{ route('care-support-teachers.index') }}">
+                            Find Teacher
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a
+                            class="nav-link {{ $route === 'about' ? 'active' : '' }}"
+                            href="{{ route('about') }}">
+                            About
+                        </a>
                     </li>
                 </ul>
 

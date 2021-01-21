@@ -1,7 +1,5 @@
 <?php
 
-use App\Constants\StaticContents;
-use App\Models\State;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'HomeController@index')->name('home');
 
-    $successStories = StaticContents::$successStories;
-
-    $states = State::getStates();
-
-    return view('welcome', [
-        'states' => $states,
-        'successStories' => $successStories
-    ]);
-});
+Route::get('/about-us', 'HomeController@about')->name('about');
 
 Route::group(['prefix' => 'care-support-teachers'], function () {
 

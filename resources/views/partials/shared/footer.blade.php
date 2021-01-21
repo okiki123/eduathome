@@ -27,10 +27,8 @@ $authRoutes = config('custom.auth_routes');
             </h3>
 
             <p class="footer-links text-white">
-                <a href="#">Home</a> ·
-                <a href="#">Pricing</a> ·
-                <a href="#">About</a> ·
-                <a href="#">Contact</a>
+                <a href="{{ route('home') }}">Home</a> ·
+                <a href="{{ route('about') }}">About</a>
             </p>
             <p class="footer-company-name">Edu@Home © 2020</p>
         </div>

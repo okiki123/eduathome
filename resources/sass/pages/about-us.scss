@@ -1,0 +1,131 @@
+.about-us {
+
+    .section {
+        min-height: $section-height;
+
+        &-contents {
+            padding: 4rem 2rem;
+
+            @include media-breakpoint-down(sm) {
+                padding: 4rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+
+                >h2 {
+                    font-size: 2rem;
+                    color: $tertiary-brown;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .banner-section {
+        min-height: 75vh;
+
+        .banner {
+            background: linear-gradient(
+                    120deg,
+                    rgba(27, 89, 84, 0.7),
+                    rgba(27, 89, 84, 0.7)
+            ), url("/images/about_banner.jpg") no-repeat center;
+            background-size: cover;
+
+            .search-area {
+                h2 {
+                    font-size: 4em;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 2.5em;
+                    }
+                }
+
+                .search-text {
+                    font-size: 1.5rem;
+                    width: 50%;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1.2rem;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    .aim {
+        margin-top: 5rem;
+
+        &__texts {
+            @include media-breakpoint-up(lg) {
+                width: 80%;
+            }
+        }
+
+        &__big-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.0;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 1.85rem;
+            }
+        }
+
+        &__image {
+            width: 90%;
+
+            @include media-breakpoint-up(lg) {
+                width: 450px;
+            }
+
+            @include media-breakpoint-between(md, lg) {
+                width: 80%
+            }
+        }
+    }
+
+    .good-hands {
+        margin-top: 4rem;
+
+        .text {
+            background-color: $primary-green;
+            color: white;
+            padding: 40px;
+            min-height: 500px;
+
+            h2 {
+                color: $white;
+                font-weight: bold;
+            }
+
+            .button {
+                a {
+                    height: 40px;
+                }
+            }
+        }
+
+        .picture {
+            background: url("/images/teacher.jpg") center no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+    }
+
+    .strategy {
+        padding: 6rem 1rem;
+
+        .texts {
+            @include media-breakpoint-up(md) {
+                width: 75%;
+            }
+
+            p {
+                display: flex;
+            }
+        }
+    }
+}

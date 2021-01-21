@@ -11716,6 +11716,139 @@ table th a:hover {
   margin-bottom: 5px;
 }
 
+.about-us .section {
+  min-height: calc(100vh - 81px);
+}
+
+.about-us .section-contents {
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .about-us .section-contents {
+    padding: 4rem 1rem;
+  }
+}
+
+.about-us .section-contents .section-header {
+  margin-bottom: 3rem;
+}
+
+.about-us .section-contents .section-header > h2 {
+  font-size: 2rem;
+  color: #121104;
+  font-weight: 600;
+}
+
+.about-us .banner-section {
+  min-height: 75vh;
+}
+
+.about-us .banner-section .banner {
+  background: linear-gradient(120deg, rgba(27, 89, 84, 0.7), rgba(27, 89, 84, 0.7)), url("/images/about_banner.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.about-us .banner-section .banner .search-area h2 {
+  font-size: 4em;
+}
+
+@media (max-width: 767.98px) {
+  .about-us .banner-section .banner .search-area h2 {
+    font-size: 2.5em;
+  }
+}
+
+.about-us .banner-section .banner .search-area .search-text {
+  font-size: 1.5rem;
+  width: 50%;
+}
+
+@media (max-width: 767.98px) {
+  .about-us .banner-section .banner .search-area .search-text {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+}
+
+.about-us .aim {
+  margin-top: 5rem;
+}
+
+@media (min-width: 992px) {
+  .about-us .aim__texts {
+    width: 80%;
+  }
+}
+
+.about-us .aim__big-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@media (max-width: 767.98px) {
+  .about-us .aim__big-text {
+    font-size: 1.85rem;
+  }
+}
+
+.about-us .aim__image {
+  width: 90%;
+}
+
+@media (min-width: 992px) {
+  .about-us .aim__image {
+    width: 450px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .about-us .aim__image {
+    width: 80%;
+  }
+}
+
+.about-us .good-hands {
+  margin-top: 4rem;
+}
+
+.about-us .good-hands .text {
+  background-color: #1b5954;
+  color: white;
+  padding: 40px;
+  min-height: 500px;
+}
+
+.about-us .good-hands .text h2 {
+  color: white;
+  font-weight: bold;
+}
+
+.about-us .good-hands .text .button a {
+  height: 40px;
+}
+
+.about-us .good-hands .picture {
+  background: url("/images/teacher.jpg") center no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.about-us .strategy {
+  padding: 6rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .about-us .strategy .texts {
+    width: 75%;
+  }
+}
+
+.about-us .strategy .texts p {
+  display: flex;
+}
+
 .landing-page .covid-notice {
   background-color: #e54343;
 }
@@ -12022,6 +12155,6 @@ table th a:hover {
 }
 
 .tutors-page {
-  padding-top: 7rem;
+  padding-top: 3rem;
 }
 

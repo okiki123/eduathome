@@ -12,33 +12,6 @@ $data = [
     'action' => route('care-support-teachers.index')
 ];
 
-$tutors = [
-    [
-        'fullname' => 'Peter Ayinde',
-        'bio' => 'cool calm and collected',
-        'state' => 'Tenesse',
-        'city' => 'Memphis'
-    ],
-    [
-        'fullname' => 'Peter Ayinde',
-        'bio' => 'cool calm and collected',
-        'state' => 'Tenesse',
-        'city' => 'Memphis'
-    ],
-    [
-        'fullname' => 'Peter Ayinde',
-        'bio' => 'cool calm and collected',
-        'state' => 'Tenesse',
-        'city' => 'Memphis'
-    ],
-    [
-        'fullname' => 'Peter Ayinde',
-        'bio' => 'cool calm and collected',
-        'state' => 'Tenesse',
-        'city' => 'Memphis'
-    ],
-];
-
 ?>
 
 @extends('layouts.auth')
