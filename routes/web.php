@@ -43,6 +43,8 @@ Route::group(['prefix' => 'dashboard'], function () {
 
         Route::put('/bio-resume', 'CareSupportTeacher\SettingsController@updateBioAndResume')->name('dashboard.update.bio-resume');
 
+        Route::post('/upload-avatar', 'CareSupportTeacher\SettingsController@uploadAvatar')->name('dashboard.upload-avatar');
+
         Route::put('/password', 'CareSupportTeacher\SettingsController@updatePassword')->name('dashboard.update.password');
 
         Route::group(['prefix' => 'settings'], function () {

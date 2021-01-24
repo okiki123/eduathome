@@ -2,7 +2,7 @@
     <div class="justify-content-between">
         <div class="d-flex">
             <div class="mr-5">
-                <img src="{{ $user->avatar_url ?? asset('images/avatar/avatar.svg') }}" width="150" height="150">
+                <img src="{{ $user->caregiver->avatar_url ?? asset('images/avatar/avatar.svg') }}" width="150" height="150">
             </div>
             <div class="pt-3">
                 <div class="mb-2">

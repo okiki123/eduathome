@@ -5,9 +5,11 @@ namespace App\Http\Controllers\CareSupportTeacher;
 use App\Constants\Messages;
 use App\Http\Controllers\Controller;
 use App\Models\State;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class SettingsController extends Controller
 {
@@ -99,6 +101,33 @@ class SettingsController extends Controller
         } catch (Exception $ex) {
             report($ex);
             return $this->returnError('Failed to update your password');
+        }
+    }
+
+    public function uploadAvatar(Request $request)
+    {
+        $image = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $request->image));
+
+        $imageName = Carbon::now() . '--'  . $request->imageName;
+
+        try {
+
+            Storage::disk('s3')->put('' . $imageName, $image, 'public');
+
+            $url = Storage::disk('s3')->url('' . $imageName, $image);
+
+            auth()->user()->caregiver()->update(['avatar_url' => $url]);
+
+            return $this->returnSuccess('Avatar changed successfully');
+
+        } catch (Exception $ex) {
+            echo '<pre>';
+            print_r($ex->getMessage());
+            echo '</pre>';
+            exit;
+
+            return  $this->returnError('Failed to change avatar');
+
         }
     }
 }

@@ -22,6 +22,12 @@ $bioData = [
     'data' => $caregiver ?? old()
 ];
 
+$avatarData = [
+    "defaultImage" => $caregiver->avatar_url ?? asset('images/avatar/avatar.svg'),
+    "route" => route('dashboard.upload-avatar'),
+    "src" => $caregiver->avatar_url ?? null
+];
+
 ?>
 
 @extends('layouts.settings')
@@ -40,7 +46,10 @@ $bioData = [
             <div class="offset-lg-1 col-lg-7">
                 <div class="image">
                     <div class="text-lg-right text-center">
-                        <img src="{{ asset('images/avatar/avatar.svg') }}" width="150" height="150">
+{{--                        <img src="{{ asset('images/avatar/avatar.svg') }}" width="150" height="150">--}}
+
+                        <!-- Rendered by react component in js/components/common/avatar.jsx -->
+                        <div id="avatar-upload" data-props="{{ json_encode($avatarData) }}"></div>
                     </div>
                 </div>
             </div>
