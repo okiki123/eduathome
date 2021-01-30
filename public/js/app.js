@@ -76409,12 +76409,14 @@ var Select = function Select(_ref) {
       error = _ref.error,
       _ref$className = _ref.className,
       className = _ref$className === void 0 ? '' : _ref$className,
+      _ref$dataAttribute = _ref.dataAttribute,
+      dataAttribute = _ref$dataAttribute === void 0 ? '' : _ref$dataAttribute,
       value = _ref.value,
       _ref$addValidation = _ref.addValidation,
       addValidation = _ref$addValidation === void 0 ? true : _ref$addValidation,
       _ref$labelClass = _ref.labelClass,
       labelClass = _ref$labelClass === void 0 ? '' : _ref$labelClass,
-      rest = _objectWithoutProperties(_ref, ["name", "label", "prompt", "error", "className", "value", "addValidation", "labelClass"]);
+      rest = _objectWithoutProperties(_ref, ["name", "label", "prompt", "error", "className", "dataAttribute", "value", "addValidation", "labelClass"]);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group"
@@ -76433,7 +76435,8 @@ var Select = function Select(_ref) {
   }, rest)), addValidation && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "hidden",
     name: name,
-    value: value
+    value: value,
+    "data-attribute": dataAttribute
   }), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
     id: "".concat(name),
     className: "form-text text-danger"
@@ -78014,6 +78017,148 @@ var FilterTutorForm = /*#__PURE__*/function (_BaseForm) {
 
 /***/ }),
 
+/***/ "./resources/js/components/forms/resume.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/forms/resume.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Resume; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-form */ "./resources/js/components/forms/base-form.jsx");
+/* harmony import */ var _common_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/input */ "./resources/js/components/common/input.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var Resume = /*#__PURE__*/function (_BaseForm) {
+  _inherits(Resume, _BaseForm);
+
+  var _super = _createSuper(Resume);
+
+  function Resume() {
+    var _this;
+
+    _classCallCheck(this, Resume);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      error: "",
+      file: null,
+      fileName: "Choose File",
+      inputFile: _this.props.file,
+      acceptedFiles: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf']
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      var file = e.currentTarget.files[0];
+      var error = "";
+
+      if (!_this.state.acceptedFiles.includes(file.type)) {
+        error = "The accepted files are png, jpg, jpeg and pdf";
+      } else if (file.size > 2097152) {
+        error = "The maximum file size acceptable is 2MB";
+      }
+
+      _this.setState({
+        error: error,
+        fileName: file.name,
+        file: file
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {});
+
+    return _this;
+  }
+
+  _createClass(Resume, [{
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          error = _this$state.error,
+          file = _this$state.file,
+          fileName = _this$state.fileName,
+          inputFile = _this$state.inputFile;
+      var _this$props = this.props,
+          route = _this$props.route,
+          token = _this$props.token,
+          name = _this$props.name;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        method: "post",
+        action: route,
+        enctype: "multipart/form-data"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "_token",
+        value: token,
+        type: "hidden"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "custom-file"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        name: "resume",
+        className: "custom-file-input",
+        id: "resume",
+        onChange: this.handleChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "custom-file-label",
+        htmlFor: "resume"
+      }, fileName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-danger"
+      }, error), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "my-1"
+      }, !!inputFile && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: inputFile,
+        title: "View",
+        target: "_blank"
+      }, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-standard mt-3 font-w600",
+        disabled: error || !file,
+        type: "submit"
+      }, "Update"))));
+    }
+  }]);
+
+  return Resume;
+}(_base_form__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/forms/settings-password-form.jsx":
 /*!******************************************************************!*\
   !*** ./resources/js/components/forms/settings-password-form.jsx ***!
@@ -78209,7 +78354,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_banner_search_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/banner-search-form */ "./resources/js/components/forms/banner-search-form.jsx");
 /* harmony import */ var _forms_filter_tutor_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./forms/filter-tutor-form */ "./resources/js/components/forms/filter-tutor-form.jsx");
 /* harmony import */ var _forms_avatar_upload__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/avatar-upload */ "./resources/js/components/forms/avatar-upload.jsx");
+/* harmony import */ var _forms_resume__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/resume */ "./resources/js/components/forms/resume.jsx");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -78277,53 +78424,63 @@ if (document.getElementById('settings-basic-details')) {
 
   _props4.token = token;
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_basic_details_form__WEBPACK_IMPORTED_MODULE_5__["default"], _props4), _element4);
-} // User settings Page - Change password Form
+} // User settings Page - Resume Form
 
 
-if (document.getElementById('settings-password')) {
-  var _element5 = document.getElementById('settings-password');
+if (document.getElementById('resume-form')) {
+  var _element5 = document.getElementById('resume-form');
 
   var _props5 = JSON.parse(_element5.dataset.props);
 
   _props5.token = token;
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_settings_password_form__WEBPACK_IMPORTED_MODULE_6__["default"], _props5), _element5);
-} // User settings Page - Bio and Resume form
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_resume__WEBPACK_IMPORTED_MODULE_12__["default"], _props5), _element5);
+} // User settings Page - Change password Form
 
 
-if (document.getElementById('bio-and-resume')) {
-  var _element6 = document.getElementById('bio-and-resume');
+if (document.getElementById('settings-password')) {
+  var _element6 = document.getElementById('settings-password');
 
   var _props6 = JSON.parse(_element6.dataset.props);
 
   _props6.token = token;
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_bio_resume_form__WEBPACK_IMPORTED_MODULE_8__["default"], _props6), _element6);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_settings_password_form__WEBPACK_IMPORTED_MODULE_6__["default"], _props6), _element6);
+} // User settings Page - Bio and Resume form
+
+
+if (document.getElementById('bio-and-resume')) {
+  var _element7 = document.getElementById('bio-and-resume');
+
+  var _props7 = JSON.parse(_element7.dataset.props);
+
+  _props7.token = token;
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_bio_resume_form__WEBPACK_IMPORTED_MODULE_8__["default"], _props7), _element7);
 } // Toastr Notification
 
 
 if (document.getElementById('toastr-notification')) {
-  var _element7 = document.getElementById('toastr-notification');
+  var _element8 = document.getElementById('toastr-notification');
 
-  var _props7 = JSON.parse(_element7.dataset.props);
+  var _props8 = JSON.parse(_element8.dataset.props);
 
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_toastr__WEBPACK_IMPORTED_MODULE_7__["default"], _props7), _element7);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_toastr__WEBPACK_IMPORTED_MODULE_7__["default"], _props8), _element8);
 } // Banner Search Form
 
 
 if (document.getElementById('banner-search')) {
-  var _element8 = document.getElementById('banner-search');
+  var _element9 = document.getElementById('banner-search');
 
-  var _props8 = JSON.parse(_element8.dataset.props);
+  var _props9 = JSON.parse(_element9.dataset.props);
 
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_banner_search_form__WEBPACK_IMPORTED_MODULE_9__["default"], _props8), _element8);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_banner_search_form__WEBPACK_IMPORTED_MODULE_9__["default"], _props9), _element9);
 } // Banner Tutor Form
 
 
 if (document.getElementById('filter-tutor')) {
-  var _element9 = document.getElementById('filter-tutor');
+  var _element10 = document.getElementById('filter-tutor');
 
-  var _props9 = JSON.parse(_element9.dataset.props);
+  var _props10 = JSON.parse(_element10.dataset.props);
 
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_filter_tutor_form__WEBPACK_IMPORTED_MODULE_10__["default"], _props9), _element9);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_filter_tutor_form__WEBPACK_IMPORTED_MODULE_10__["default"], _props10), _element10);
 }
 
 /***/ }),
@@ -78339,7 +78496,11 @@ if (document.getElementById('filter-tutor')) {
   var tableAction = $('.table-action'),
       actionForm = $('.action-form'),
       actionModal = $('.action-modal'),
-      field = actionModal.find('[data-attribute]');
+      addBtn = $('.add-btn'),
+      formInput = $('.form-input'),
+      submitButton = $('.submit-button'),
+      methodInput = $('[name="_method"]');
+  field = actionModal.find('[data-attribute]');
   tableAction.on('click', function () {
     var that = $(this);
     field.each(function () {
@@ -78356,7 +78517,32 @@ if (document.getElementById('filter-tutor')) {
         $("[data-attribute=".concat(attribute, "]")).attr('href', that.data(attribute));
       }
     });
+    formInput.trigger('change');
+    actionModal.find('.modal-title').html($(this).data('title'));
     actionForm.attr('action', $(this).data('url'));
+  });
+  addBtn.on('click', function () {
+    actionForm.trigger('reset');
+    actionModal.find('.modal-title').html($(this).data('title'));
+    actionForm.attr('action', $(this).data('url'));
+    methodInput.val($(this).data('method'));
+  });
+  formInput.on('change keyup', function () {
+    if (!$(this).val()) {
+      $(this).addClass('is-invalid');
+      $(this).prev().addClass('text-danger');
+      $(this).next().html('This field is required');
+    } else {
+      $(this).removeClass('is-invalid');
+      $(this).prev().removeClass('text-danger');
+      $(this).next().html('');
+    }
+
+    var valid = true;
+    actionForm.find('.form-input').each(function (index, item) {
+      valid = valid && !!$(item).val();
+      if (valid) submitButton.attr('disabled', false);else submitButton.attr('disabled', true);
+    });
   });
 })(jQuery);
 

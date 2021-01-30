@@ -2,7 +2,7 @@ import React from "react";
 import ReactSelect from "react-select";
 import PropTypes from "prop-types";
 
-const Select = ({ name, label, prompt = 'Select', error, className = '', value, addValidation = true, labelClass = '', ...rest }) => {
+const Select = ({ name, label, prompt = 'Select', error, className = '', dataAttribute = '', value, addValidation = true, labelClass = '', ...rest }) => {
     return (
         <div className="form-group">
             {
@@ -19,9 +19,9 @@ const Select = ({ name, label, prompt = 'Select', error, className = '', value, 
                    isRtl={false}
                    {...rest}
             />
-            {addValidation && <input type="hidden" name={name} value={value}/>}
+            {addValidation && <input type="hidden" name={name} value={value} data-attribute={dataAttribute}/>}
             {
-                error && <small id={`${name}`} className="form-text text-danger">{error}</small>
+                error && <small id={`${name}`} className="form-text text-danger" >{error}</small>
             }
         </div>
     );

@@ -2,6 +2,10 @@
     let tableAction = $('.table-action'),
         actionForm = $('.action-form'),
         actionModal = $('.action-modal'),
+        addBtn = $('.add-btn'),
+        formInput = $('.form-input'),
+        submitButton = $('.submit-button'),
+        methodInput = $('[name="_method"]')
         field = actionModal.find('[data-attribute]');
 
     tableAction.on('click', function () {
@@ -20,6 +24,37 @@
             }
         });
 
+        formInput.trigger('change');
+
+        actionModal.find('.modal-title').html($(this).data('title'))
         actionForm.attr('action', $(this).data('url'));
+    });
+
+    addBtn.on('click', function () {
+        actionForm.trigger('reset');
+        actionModal.find('.modal-title').html($(this).data('title'))
+        actionForm.attr('action', $(this).data('url'));
+
+        methodInput.val($(this).data('method'));
+    });
+
+    formInput.on('change keyup', function () {
+       if (!$(this).val()) {
+           $(this).addClass('is-invalid');
+           $(this).prev().addClass('text-danger');
+           $(this).next().html('This field is required');
+       } else {
+           $(this).removeClass('is-invalid');
+           $(this).prev().removeClass('text-danger');
+           $(this).next().html('');
+       }
+
+        let valid = true;
+        actionForm.find('.form-input').each((index, item) => {
+            valid = valid && !!($(item).val());
+
+            if (valid) submitButton.attr('disabled', false);
+            else submitButton.attr('disabled', true);
+       })
     });
 })(jQuery);

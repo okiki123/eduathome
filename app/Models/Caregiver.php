@@ -31,4 +31,9 @@ class Caregiver extends BaseModel {
      * @var array
      */
     protected $guarded = [];
+
+    public function educations()
+    {
+        return $this->hasMany(Education::class)->orderByDesc('id');
+    }
 }

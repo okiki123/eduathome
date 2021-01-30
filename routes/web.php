@@ -45,13 +45,23 @@ Route::group(['prefix' => 'dashboard'], function () {
 
         Route::post('/upload-avatar', 'CareSupportTeacher\SettingsController@uploadAvatar')->name('dashboard.upload-avatar');
 
+        Route::post('/upload-resume', 'CareSupportTeacher\SettingsController@uploadResume')->name('dashboard.upload-resume');
+
         Route::put('/password', 'CareSupportTeacher\SettingsController@updatePassword')->name('dashboard.update.password');
+
+        Route::post('/education', 'CareSupportTeacher\SettingsController@addEducation')->name('dashboard.add.education');
+
+        Route::put('/education/{id}', 'CareSupportTeacher\SettingsController@updateEducation')->name('dashboard.update.education');
+
+        Route::delete('/education/{id}', 'CareSupportTeacher\SettingsController@deleteEducation')->name('dashboard.delete.education');
 
         Route::group(['prefix' => 'settings'], function () {
 
             Route::get('/profile', 'CareSupportTeacher\SettingsController@index')->name('dashboard.settings.profile');
 
             Route::get('/account', 'CareSupportTeacher\SettingsController@account')->name('dashboard.settings.account');
+
+            Route::get('/education', 'CareSupportTeacher\SettingsController@education')->name('dashboard.settings.education');
 
         });
 

@@ -10,6 +10,7 @@ import BioResumeForm from "./forms/bio-resume-form";
 import BannerSearchForm from "./forms/banner-search-form";
 import FilterTutorForm from "./forms/filter-tutor-form";
 import AvatarUpload from "./forms/avatar-upload";
+import Resume from "./forms/resume";
 
 let token;
 
@@ -55,6 +56,14 @@ if (document.getElementById('settings-basic-details')) {
     const props = JSON.parse(element.dataset.props);
     props.token = token;
     ReactDOM.render(<BasicDetailsForm {...props} />, element);
+}
+
+// User settings Page - Resume Form
+if (document.getElementById('resume-form')) {
+    const element = document.getElementById('resume-form');
+    const props = JSON.parse(element.dataset.props);
+    props.token = token;
+    ReactDOM.render(<Resume {...props} />, element);
 }
 
 // User settings Page - Change password Form

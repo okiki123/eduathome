@@ -7,14 +7,16 @@
             <i class="fas fa-user mr-3"></i>
             Profile
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="{{ route('dashboard.settings.education') }}"
+           class="list-group-item list-group-item-action
+                    {{ \Illuminate\Support\Facades\Route::currentRouteName() === 'dashboard.settings.education' ? 'bg-light' : '' }}">
             <i class="fas fa-university mr-3"></i>
-            Education
+            Education and Resume
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
-            <i class="fas fa-file-alt mr-3"></i>
-            Certifications
-        </a>
+{{--        <a href="#" class="list-group-item list-group-item-action">--}}
+{{--            <i class="fas fa-file-alt mr-3"></i>--}}
+{{--            Certifications--}}
+{{--        </a>--}}
         <a href="{{ route('dashboard.settings.account') }}"
            class="list-group-item list-group-item-action
                     {{ \Illuminate\Support\Facades\Route::currentRouteName() === 'dashboard.settings.account' ? 'bg-light' : '' }}">

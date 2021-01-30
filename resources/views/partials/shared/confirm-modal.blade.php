@@ -13,7 +13,7 @@
 
 <form action="{{ $url }}" method="post" class="action-form">
     @csrf
-    @method('PUT')
+    @method($method ?? "PUT")
 
     <div class="modal fade action-modal"
          id="{{ $id }}"
