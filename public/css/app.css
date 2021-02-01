@@ -11716,6 +11716,14 @@ table th a:hover {
   margin-bottom: 5px;
 }
 
+.profile-navs a {
+  color: #1b5954;
+}
+
+.profile-navs a.active {
+  background-color: #aba104 !important;
+}
+
 .about-us .section {
   min-height: calc(100vh - 81px);
 }

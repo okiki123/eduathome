@@ -1,0 +1,9 @@
+.profile-navs {
+    a {
+        color: $primary-green;
+
+        &.active {
+            background-color: $secondary-lemon $im;
+        }
+    }
+}

@@ -47,7 +47,7 @@ class CareSupportTeacherController extends Controller
 
     public function profile($id)
     {
-        $user = User::where(['id' => $id])->with(['caregiver.city', 'caregiver.state'])->first();
+        $user = User::where(['id' => $id])->with(['caregiver.city', 'caregiver.state', 'caregiver.educations'])->first();
 
         if (!$user || !$user['caregiver']) {
             return $this->returnError('Caregiver does not exist');
